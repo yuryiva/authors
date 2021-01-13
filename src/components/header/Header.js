@@ -18,6 +18,9 @@ export default function Header() {
         <Link to="/page4">
           <li>PAGE 4</li>
         </Link>
+        <Link to="/home">
+          <li>HOME</li>
+        </Link>
       </ul>
     </div>
   );

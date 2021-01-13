@@ -2,7 +2,6 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Main from "./components/main/Main";
 import MainSection from "./components/mainSection/MainSection";
 import Page1 from './components/page1/Page1'
 import Page2 from './components/page2/Page2'
@@ -21,6 +20,7 @@ function App() {
         <Route path="/page2" render={(props) => <Page2 {...props} />} />
         <Route path="/page3" render={(props) => <Page3 {...props} />} />
         <Route path="/page4" render={(props) => <Page4 {...props} />} />
+        <Route path="/home" render={(props) => <MainSection {...props} />} />
       </Switch>
       <hr />
       <Footer />
