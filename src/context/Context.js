@@ -4,7 +4,7 @@ export const Context = React.createContext();
 
 class Provider extends Component {
   state = {    
-        
+        // Add state properties
   };
 
 //   Component did mount section

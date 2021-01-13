@@ -9,15 +9,19 @@ export default function Header() {
         <Link to="/page1">
           <li>PAGE 1</li>
         </Link>
+
         <Link to="/page2">
           <li>PAGE 2</li>
         </Link>
+
         <Link to="/page3">
           <li>PAGE 3</li>
         </Link>
+
         <Link to="/page4">
           <li>PAGE 4</li>
         </Link>
+        
         <Link to="/">
           <li>HOME</li>
         </Link>
