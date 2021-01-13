@@ -11,8 +11,7 @@ import Page4 from './components/page4/Page4'
 function App() {
   return (
     <div>
-      <Header />
-      
+      <Header />      
 
       <Switch>
         <Route exact path="/" render={(props) => <MainSection {...props} />} />
@@ -20,7 +19,7 @@ function App() {
         <Route path="/page2" render={(props) => <Page2 {...props} />} />
         <Route path="/page3" render={(props) => <Page3 {...props} />} />
         <Route path="/page4" render={(props) => <Page4 {...props} />} />
-        <Route path="/home" render={(props) => <MainSection {...props} />} />
+        {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
       <Footer />
