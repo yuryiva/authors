@@ -21,12 +21,16 @@ const ContactForm = () => {
     });
     setStatus("Submit");
     let result = await response.json();
-    setSentMessage(true);
+    setSentMessage(result.status);
   };
   return (
     <>
       {sentMessage ? (
-        <div><p>HELLO!</p><button onClick={()=> setSentMessage(false)}>sent another message</button></div>
+        <div>
+            {sentMessage==="SENT" && <p>THANK YOU A LOT</p> }
+            {sentMessage==="ERROR" && <p>SOMETHING WENT WRONG. TRY AGAIN PLEASE</p> }
+            <button onClick={()=> setSentMessage(false)}>sent another message</button>
+        </div>
       ) : (
         <form onSubmit={handleSubmit}>
           <div>
