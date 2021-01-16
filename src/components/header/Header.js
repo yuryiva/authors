@@ -41,7 +41,7 @@ const Header = ({ open, setOpen }) => {
 }
 
 
-// Styling components
+// Styling nav components
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
@@ -58,15 +58,12 @@ const StyledMenu = styled.nav`
   transition: transform 0.5s ease-in-out;
 
   /* @media (max-width: 576px) {
-      width: 100%;
-      a {
-        font-size: 1rem;
-      }
-    } */
+      width: 100%;      
+  } */
 
   a {
     font-size: 2rem;    
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;

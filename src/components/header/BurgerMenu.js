@@ -2,8 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const BurgerMenu = ({ open, setOpen }) => {
+
+  const handleBurgerMenu = () => {
+    let closed = !open;
+    setOpen(closed);
+  }
+
     return (
-        <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <StyledBurger 
+          open={open} 
+          onClick={handleBurgerMenu}
+        >
             <div />
             <div />
             <div />
@@ -15,6 +24,7 @@ const BurgerMenu = ({ open, setOpen }) => {
 const StyledBurger = styled.button`
   position: absolute;
   top: 5%;
+  /* top: 3rem; */
   /* right: 2rem; */
   right: 5%;
   display: flex;
@@ -31,6 +41,10 @@ const StyledBurger = styled.button`
   &:focus {
     outline: none;
   }
+
+  /* @media (max-width: 768px) {
+      width: 100%;      
+  } */
 
   div {
     width: 2rem;
