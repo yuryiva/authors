@@ -27,7 +27,7 @@ const ContactForm = () => {
     <>
       {sentMessage ? (
         <div>
-            {sentMessage==="SENT" && <p>THANK YOU A LOT</p> }
+            {sentMessage==="SENT" && <p>THANK YOU! WE'LL GET BACK TO YOU ASAP</p> }
             {sentMessage==="ERROR" && <p>SOMETHING WENT WRONG. TRY AGAIN PLEASE</p> }
             <button onClick={()=> setSentMessage(false)}>sent another message</button>
         </div>
