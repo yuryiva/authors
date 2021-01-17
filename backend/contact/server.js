@@ -36,10 +36,11 @@ router.post("/contact", (req, res) => {
   const mail = {
     from: name,
     to: userEmail,
-    subject: "Contact Form Submission",
-    html: `<p>Name: ${name}</p>
-             <p>Email: ${email}</p>
-             <p>Message: ${message}</p>`,
+    subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
+    html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
+             <h2>Email to contact: <h1>${email}</h1></h2>
+             <h2>Message: ${message}</h2>
+             <img src='https://www.routledge.com/rsc/images/crccms/TFG202001-Authors-r3.jpg' alt='authors_logo'/>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
