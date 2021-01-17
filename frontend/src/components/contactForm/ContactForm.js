@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
+  // const [buttonDefault, setButton] = useState("Initial");
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
+    // setButton("Sending");
     const { name, email, message } = e.target.elements;
     let details = {
       name: name.value,
@@ -24,12 +28,18 @@ const ContactForm = () => {
     setSentMessage(result.status);
   };
   return (
-    <>
+    <SendMessageForm>
       {sentMessage ? (
         <div>
-            {sentMessage==="SENT" && <p>THANK YOU! WE'LL GET BACK TO YOU ASAP</p> }
-            {sentMessage==="ERROR" && <p>SOMETHING WENT WRONG. TRY AGAIN PLEASE</p> }
-            <button onClick={()=> setSentMessage(false)}>sent another message</button>
+          {sentMessage === "SENT" && (
+            <p>THANK YOU! WE'LL GET BACK TO YOU ASAP</p>
+          )}
+          {sentMessage === "ERROR" && (
+            <p>SOMETHING WENT WRONG. TRY AGAIN PLEASE</p>
+          )}
+          <button onClick={() => setSentMessage(false)}>
+            sent another message
+          </button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -48,8 +58,23 @@ const ContactForm = () => {
           <button type="submit">{status}</button>
         </form>
       )}
-    </>
+    </SendMessageForm>
   );
 };
 
 export default ContactForm;
+
+const SendMessageForm = styled.div`
+  width: 50%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: lightblue;
+
+  border: 2px solid black;
+`;
+
+// const SendMessageButton = styled.button`
+// font-size: ${({ Initial }) => Initial ? '50px': '20px'}
+// `;
