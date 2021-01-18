@@ -1,17 +1,17 @@
-const express = require("express");
-const router = express.Router();
-const cors = require("cors");
+const {Router} = require("express");
+const router = Router();
+// const cors = require("cors");
 const nodemailer = require("nodemailer");
 const ck = require("ckey");
 
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-app.use("/", router);
-app.listen(5000, () => console.log("Server Running"));
+// const app = express();
+// app.use(cors());
+// app.use(express.json());
+// app.use("/", router);
+// app.listen(5000, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
@@ -42,7 +42,7 @@ router.post("/preorder", (req, res) => {
     from: name,
     to: userEmail,
     subject: "BOOK PREORDER",
-    html:  `<h2>Hello, Sara, Cristina! You have books preordered by: <h1>${name}</h1></h2>
+    html: `<h2>Hello, Sara, Cristina! You have books preordered by: <h1>${name}</h1></h2>
             <h1>Amount of books ordered: ${amount}</h1>
             <h1>For the total amount of: ${totalOrder} EUR</h1>  
             <h2>Email to contact: <h1>${email}</h1></h2>
@@ -59,3 +59,5 @@ router.post("/preorder", (req, res) => {
     }
   });
 });
+
+module.exports = router;
