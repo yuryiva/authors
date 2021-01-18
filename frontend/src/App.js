@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import React, { useState } from 'react';
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
@@ -7,11 +8,15 @@ import Page1 from './components/page1/Page1'
 import Page2 from './components/page2/Page2'
 import Page3 from './components/page3/Page3'
 import Page4 from './components/page4/Page4'
+import BurgerMenu from "./components/header/BurgerMenu";
 
-function App() {
+const App = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <div>
-      <Header />      
+      <BurgerMenu open={open} setOpen={setOpen} />
+      <Header open={open} setOpen={setOpen} />      
 
       <Switch>
         <Route exact path="/" render={(props) => <MainSection {...props} />} />
