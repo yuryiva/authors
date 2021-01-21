@@ -14,7 +14,6 @@ app.use(express.json());
 
 app.use("/", [contactRouter, preOrderRouter, testRouter]);
 
-
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
   //// TAKE ALL THE PATHS (*) I'VE EVER CREATED
@@ -25,3 +24,20 @@ if (process.env.NODE_ENV === "production") {
 }
 
 module.exports = app;
+
+//Payment system
+
+const SERVER_CONFIGS = require("./payment/constants/server");
+
+const configureServer = require("./payment/server");
+const configureRoutes = require("./payment/routes");
+
+// const app2 = express();
+
+configureServer(app);
+configureRoutes(app);
+
+app.listen(SERVER_CONFIGS.PORT, (error) => {
+  if (error) throw error;
+  console.log("Server running on port: " + SERVER_CONFIGS.PORT);
+});
