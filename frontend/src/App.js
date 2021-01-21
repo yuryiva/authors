@@ -1,14 +1,15 @@
 import { Route, Switch } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import MainSection from "./components/mainSection/MainSection";
-import Page1 from './components/page1/Page1'
-import Page2 from './components/page2/Page2'
-import Page3 from './components/page3/Page3'
-import Page4 from './components/page4/Page4'
+import Page1 from "./components/page1/Page1";
+import Page2 from "./components/page2/Page2";
+import Page3 from "./components/page3/Page3";
+import Page4 from "./components/page4/Page4";
 import BurgerMenu from "./components/header/BurgerMenu";
+import Checkout from "./components/payment/Checkout";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <div>
       <BurgerMenu open={open} setOpen={setOpen} />
-      <Header open={open} setOpen={setOpen} />      
+      <Header open={open} setOpen={setOpen} />
 
       <Switch>
         <Route exact path="/" render={(props) => <MainSection {...props} />} />
@@ -27,9 +28,14 @@ const App = () => {
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
+      <Checkout
+        name={"Authors LLC."}
+        description={"Book(s) you bought"}
+        amount={4.99}
+      />
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
