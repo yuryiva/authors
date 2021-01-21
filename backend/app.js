@@ -12,12 +12,8 @@ app.use(express.json());
 // app.use("/", router);
 // app.listen(3001, () => console.log("Server Running"));
 
-app.use("/", [contactRouter, preOrderRouter]);
-// app.use("/", preOrderRouter);
+app.use("/", [contactRouter, preOrderRouter, testRouter]);
 
-// app.use('/payment', paymentRouter)
-
-app.use("/test", testRouter);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("frontend/build"));
