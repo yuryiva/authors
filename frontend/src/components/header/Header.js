@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-// import photo from '../../assets/photo6.jpeg';
-import photo from '../../assets/photo1.jpeg';
+import photo from '../../assets/photo6.jpg';
 
 
 
