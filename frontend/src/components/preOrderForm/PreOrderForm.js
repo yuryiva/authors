@@ -71,7 +71,7 @@ const OrderForm = () => {
           </div>
           <div>TOTAL EUR: {totalOrder}</div>
           <div>
-            <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Full name:</label>
             <input type="text" id="name" required />
           </div>
           <div>

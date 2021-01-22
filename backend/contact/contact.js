@@ -23,23 +23,27 @@ contactEmail.verify((error) => {
 });
 
 router.post("/contact", (req, res) => {
+  const imageName = req.body.imageName;
+  console.log(imageName);
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
+  const topic = req.body.topicChosen;
   const mail = {
     from: name,
     to: userEmail,
     subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
     attachments: [
       {
-        filename: "Context-1.png",//////////////////////////////????????????????????/IT IS SENT EVEN WITH NO ATTACHMENTS
-        path: "./contact/Context-1.png", ////if filesToUpload.length=0, then NO ATTACHMENT!!!
+        filename: imageName, 
+        path: `./contact/${imageName}`,
       },
     ],
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
-             <h2>Email to contact: <h1>${email}</h1></h2>
-             <h2>Message: ${message}</h2>
-             <img src='https://www.routledge.com/rsc/images/crccms/TFG202001-Authors-r3.jpg' alt='authors_logo'/>`,
+    <h2>Subject of the message:<h1>${topic}</h1></h2>
+    <h2>Email to contact: <h1>${email}</h1></h2>
+    <h2>Message: ${message}</h2>
+    <img src='https://www.routledge.com/rsc/images/crccms/TFG202001-Authors-r3.jpg' alt='authors_logo'/>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
