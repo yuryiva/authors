@@ -45,6 +45,7 @@ const ContactForm = () => {
       name: name.value,
       email: email.value,
       message: message.value,
+      filesToUpload
     };
     let response = await fetch("http://localhost:3001/contact", {
       method: "POST",

@@ -19,10 +19,10 @@ app.use("/", [contactRouter, preOrderRouter, testRouter]);
 ////////////////// UPLOAD FILES
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "contact");
+    cb(null, "contact");//////////////////where is it better to save files for uploading?
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
+    cb(null, file.originalname);
   },
 });
 const upload = multer({ storage: storage }).array("file"); //if we need 1 file to upload then ....({ storage: storage }).single("file")

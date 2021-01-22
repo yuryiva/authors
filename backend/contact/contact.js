@@ -30,6 +30,12 @@ router.post("/contact", (req, res) => {
     from: name,
     to: userEmail,
     subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
+    attachments: [
+      {
+        filename: "Context-1.png",//////////////////////////////????????????????????/
+        path: "./contact/Context-1.png",
+      },
+    ],
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
              <h2>Email to contact: <h1>${email}</h1></h2>
              <h2>Message: ${message}</h2>
