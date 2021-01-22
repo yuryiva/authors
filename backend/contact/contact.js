@@ -1,17 +1,10 @@
 const { Router } = require("express");
 const router = Router();
-// const cors = require("cors");
 const nodemailer = require("nodemailer");
 const ck = require("ckey");
 
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
-
-// const app = express();
-// app.use(cors());
-// app.use(express.json());
-// app.use("/", router);
-// app.listen(3001, () => console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",

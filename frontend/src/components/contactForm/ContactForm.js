@@ -1,10 +1,40 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
   // const [buttonDefault, setButton] = useState("Initial");
+
+  ///////////////// upload files
+  const [filesToUpload, setFilesToUpload] = useState(null);
+
+  const onChangeHandler = (event) => {
+    console.log(event.target.files);
+    setFilesToUpload(event.target.files);
+  };
+
+  const onClickHandler = () => {
+    const data = new FormData();
+    for (let i = 0; i < filesToUpload.length; i++) {
+      data.append("file", filesToUpload[i]);
+    }
+
+    axios
+      .post("http://localhost:3001/upload", data, {
+        // receive two    parameter endpoint url ,form data
+      })
+      .then(
+        (res) => {
+          console.log(res.statusText, "FILE UPLOADED");
+        },
+        (error) => {
+          console.log(error, "FILE NOT UPLOADED");
+        }
+      );
+  };
+  ////////////////////
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,6 +81,20 @@ const ContactForm = () => {
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" required />
           </div>
+
+          <div>
+            <label>Upload Your File </label>
+            <input
+              type="file"
+              name="file"
+              multiple // for multiple files upload
+              onChange={onChangeHandler}
+            />
+            <button type="button" onClick={onClickHandler}>
+              Upload
+            </button>
+          </div>
+
           <div>
             <label htmlFor="message">Message:</label>
             <textarea id="message" required />
