@@ -32,8 +32,8 @@ router.post("/contact", (req, res) => {
     subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
     attachments: [
       {
-        filename: "Context-1.png",//////////////////////////////????????????????????/
-        path: "./contact/Context-1.png",
+        filename: "Context-1.png",//////////////////////////////????????????????????/IT IS SENT EVEN WITH NO ATTACHMENTS
+        path: "./contact/Context-1.png", ////if filesToUpload.length=0, then NO ATTACHMENT!!!
       },
     ],
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
