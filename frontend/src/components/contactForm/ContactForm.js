@@ -26,9 +26,10 @@ const ContactForm = () => {
 
   const onClickHandler = () => {
     const data = new FormData();
-    console.log(filesToUpload)
+    console.log(filesToUpload);
     for (let i = 0; i < filesToUpload.length; i++) {
-      data.append("file", filesToUpload[i]);
+      data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
+      console.log(data)
     }
 
     axios
@@ -38,11 +39,10 @@ const ContactForm = () => {
       .then(
         (res) => {
           console.log(res.statusText, "FILE UPLOADED");
-          console.log(res)
+          console.log(res);
         },
         (error) => {
           console.log(error, "FILE NOT UPLOADED");
-        
         }
       );
   };
@@ -51,7 +51,6 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-    // setButton("Sending");
     const { name, email, message } = e.target.elements;
     let details = {
       name: name.value,
@@ -59,7 +58,7 @@ const ContactForm = () => {
       message: message.value,
       filesToUpload,
       imageName: filesToUpload[0].name,
-      topicChosen
+      topicChosen,
     };
     let response = await fetch("http://localhost:3001/contact", {
       method: "POST",
@@ -71,8 +70,8 @@ const ContactForm = () => {
     setStatus("Submit");
     let result = await response.json();
     setSentMessage(result.status);
-    setTopicChosen('')
-    setFilesToUpload(null)
+    setTopicChosen("");
+    setFilesToUpload(null);
   };
   return (
     <SendMessageForm>
@@ -88,14 +87,12 @@ const ContactForm = () => {
             sent another message
           </button>
         </div>
-        ) : (
+      ) : (
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="topic">Please pick a topic of your message:</label>
             <select onChange={handleTopicChoice}>
-              <option>
-                --Pick an Option--
-              </option>
+              <option>--Pick an Option--</option>
               {topics.map((element, index) => (
                 <option key={index} id="topic" required>
                   {element}
