@@ -1,5 +1,12 @@
 /// THIS FILE CONTAINS MIDDLEWARES
 
+//// .env inside backend folder:
+// EMAIL=email@gmail.com
+// PASSWORD=password
+// port=3001
+// NODE_ENV=production
+
+
 const contactRouter = require("./contact/contact");
 const preOrderRouter = require("./preOrder/preOrder");
 const express = require("express");
