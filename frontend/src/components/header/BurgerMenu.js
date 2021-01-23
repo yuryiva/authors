@@ -9,6 +9,7 @@ const BurgerMenu = ({ open, setOpen }) => {
   }
 
     return (
+      <BurgerContainer>
         <StyledBurger 
           open={open} 
           onClick={handleBurgerMenu}
@@ -17,16 +18,25 @@ const BurgerMenu = ({ open, setOpen }) => {
             <div />
             <div />
         </StyledBurger>
+      </BurgerContainer>
+        
     )
 }
 
+// Burger container
+const BurgerContainer = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+`
+
 // Styled burger menu
 const StyledBurger = styled.button`
-  position: absolute;
-  top: 5%;
-  /* top: 3rem; */
-  /* right: 2rem; */
-  right: 5%;
+  /* position: absolute;
+  top: 50%;  
+  right: 50%; */  
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,7 +56,7 @@ const StyledBurger = styled.button`
       width: 100%;      
   } */
 
-  div {
+  div {    
     width: 2rem;
     height: 0.25rem;
     background: ${({ open }) => open ? '#0D0C1D' : '#0D0C1D'};
