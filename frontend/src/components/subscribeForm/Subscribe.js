@@ -43,7 +43,7 @@ const Subscribe = () => {
             {sentMessage === "ERROR" && (
                 <>
                   <p>SOMETHING WENT WRONG</p>
-                  <button onClick={() => setSentMessage('SENT')}>
+                  <button onClick={(event) => handleSubmit(event)}>
                     TRY AGAIN PLEASE
                   </button>
                 </>
