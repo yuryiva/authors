@@ -18,7 +18,6 @@ const Subscribe = () => {
     let details = {
       email: email,
     };
-    console.log(details);
 
     let response = await fetch(`http://localhost:3001/subscribe`, {
       method: "POST",
@@ -39,16 +38,14 @@ const Subscribe = () => {
         <div>
           {sentMessage ? (
             <div>
-
-            {sentMessage === "ERROR" && (
+              {sentMessage === "ERROR" && (
                 <>
                   <p>SOMETHING WENT WRONG</p>
-                  <button onClick={(event) => handleSubmit(event)}>
+                  <button onClick={() => setSentMessage(false)}>
                     TRY AGAIN PLEASE
                   </button>
                 </>
               )}
-
 
               {sentMessage === "SENT" && (
                 <div>
@@ -58,15 +55,11 @@ const Subscribe = () => {
                   </button>
                 </div>
               )}
-              
             </div>
-
-
-            
           ) : (
             <form onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email">Please enter email: </label>
+                <label htmlFor="email">Please enter email to subscribe: </label>
                 <input id="email" onChange={handleChange} type="email" />
               </div>
               <button type="submit">{status}</button>

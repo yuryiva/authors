@@ -7,7 +7,7 @@ const topics = ["topic1", "topic2", "topic3", "topic4", "topic5", "topic6"];
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
-  const [topicChosen, setTopicChosen] = useState("");
+  const [topicChosen, setTopicChosen] = useState(topics[0]);
 
   ///////////////// upload files
   const [filesToUpload, setFilesToUpload] = useState(null);
@@ -29,7 +29,7 @@ const ContactForm = () => {
     console.log(filesToUpload);
     for (let i = 0; i < filesToUpload.length; i++) {
       data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
-      console.log(data)
+      console.log(data);
     }
 
     axios
@@ -70,7 +70,7 @@ const ContactForm = () => {
     setStatus("Submit");
     let result = await response.json();
     setSentMessage(result.status);
-    setTopicChosen("");
+    setTopicChosen(topics[0]);
     setFilesToUpload(null);
   };
   return (
