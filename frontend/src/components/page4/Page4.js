@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "../contactForm/ContactForm";
+import Subscribe from "../subscribeForm/Subscribe";
 
 
 export default function Page4() {
@@ -7,6 +8,7 @@ export default function Page4() {
     <div>
       <hr />
       <ContactForm />
+      <Subscribe />
     </div>
   );
 }

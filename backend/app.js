@@ -4,6 +4,7 @@
 
 const contactRouter = require("./contact/contact");
 const preOrderRouter = require("./preOrder/preOrder");
+const subscribeRouter=require('./subscribe/subscribe')
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
@@ -15,7 +16,7 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use("/", [contactRouter, preOrderRouter, testRouter]);
+app.use("/", [contactRouter, preOrderRouter, testRouter,subscribeRouter]);
 
 
 ////////////////// UPLOAD FILES
@@ -63,7 +64,7 @@ const configureRoutes = require("./payment/routes");
 configureServer(app);
 configureRoutes(app);
 
-app.listen(SERVER_CONFIGS.PORT, (error) => {
-  if (error) throw error;
-  console.log("Server running on port: " + SERVER_CONFIGS.PORT);
-});
+// app.listen(SERVER_CONFIGS.PORT, (error) => {
+//   if (error) throw error;
+//   console.log("Server running on port: " + SERVER_CONFIGS.PORT);
+// });
