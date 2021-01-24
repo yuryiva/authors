@@ -10,7 +10,7 @@ const ContactForm = () => {
   const [sentMessage, setSentMessage] = useState(false);
   const [topicChosen, setTopicChosen] = useState(topics[0]);
   const [stateOfLoading, setStateOfLoading] = useState(0);
-
+  const [uploadButton, setUploadButton] = useState("Upload");
   ///////////////// upload files
   const [filesToUpload, setFilesToUpload] = useState(null);
 
@@ -39,15 +39,16 @@ const ContactForm = () => {
       .post("http://localhost:3001/upload", data, {
         // receive two    parameter endpoint url ,form data
         onUploadProgress: (ProgressEvent) => {
-          setStateOfLoading(
-            (ProgressEvent.loaded / ProgressEvent.total) * 100
-          );
+          setStateOfLoading((ProgressEvent.loaded / ProgressEvent.total) * 100);
         },
       })
       .then(
         (res) => {
           console.log(res.statusText, "FILE UPLOADED");
           console.log(res);
+          {
+            setUploadButton("Uploaded");
+          }
         },
         (error) => {
           console.log(error, "FILE NOT UPLOADED");
@@ -80,7 +81,8 @@ const ContactForm = () => {
     setSentMessage(result.status);
     setTopicChosen(topics[0]);
     setFilesToUpload(null);
-    setStateOfLoading(0)
+    setStateOfLoading(0);
+    setUploadButton("Upload");
   };
   return (
     <SendMessageForm>
@@ -127,13 +129,13 @@ const ContactForm = () => {
               multiple // for multiple files upload
               onChange={onChangeHandler}
             />
-            <div class="form-group">
+            <div className="form-group">
               <Progress max="100" color="success" value={stateOfLoading}>
                 {Math.round(stateOfLoading, 2)}%
               </Progress>
             </div>
             <button type="button" onClick={onClickHandler}>
-              Upload
+              {uploadButton}
             </button>
           </div>
 

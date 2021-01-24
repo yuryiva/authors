@@ -8,6 +8,7 @@ export default function Page4() {
     <div>
       <hr />
       <ContactForm />
+      <hr/>
       <Subscribe />
     </div>
   );
