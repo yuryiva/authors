@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Progress } from "reactstrap";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -8,6 +9,7 @@ const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
   const [topicChosen, setTopicChosen] = useState(topics[0]);
+  const [stateOfLoading, setStateOfLoading] = useState(0);
 
   ///////////////// upload files
   const [filesToUpload, setFilesToUpload] = useState(null);
@@ -27,6 +29,7 @@ const ContactForm = () => {
   const onClickHandler = () => {
     const data = new FormData();
     console.log(filesToUpload);
+    console.log(stateOfLoading);
     for (let i = 0; i < filesToUpload.length; i++) {
       data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
       console.log(data);
@@ -35,6 +38,11 @@ const ContactForm = () => {
     axios
       .post("http://localhost:3001/upload", data, {
         // receive two    parameter endpoint url ,form data
+        onUploadProgress: (ProgressEvent) => {
+          setStateOfLoading(
+            (ProgressEvent.loaded / ProgressEvent.total) * 100
+          );
+        },
       })
       .then(
         (res) => {
@@ -72,6 +80,7 @@ const ContactForm = () => {
     setSentMessage(result.status);
     setTopicChosen(topics[0]);
     setFilesToUpload(null);
+    setStateOfLoading(0)
   };
   return (
     <SendMessageForm>
@@ -118,6 +127,11 @@ const ContactForm = () => {
               multiple // for multiple files upload
               onChange={onChangeHandler}
             />
+            <div class="form-group">
+              <Progress max="100" color="success" value={stateOfLoading}>
+                {Math.round(stateOfLoading, 2)}%
+              </Progress>
+            </div>
             <button type="button" onClick={onClickHandler}>
               Upload
             </button>
