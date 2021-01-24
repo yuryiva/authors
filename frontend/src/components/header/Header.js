@@ -25,21 +25,21 @@ const Header = ({ open, setOpen }) => {
             Home
           </Link>   
 
-          <Link to="/page1" onClick={handleDropdown}>
+          <Link to="/books" onClick={handleDropdown}>
             Books
           </Link> 
 
-          <Link to="/page2" onClick={handleDropdown}>
+          <Link to="/podcasts" onClick={handleDropdown}>
             Podcast
           </Link>
 
-          <Link to="/page3" onClick={handleDropdown}>
+          <Link to="/shortStories" onClick={handleDropdown}>
             Short stories
           </Link>
         </LinkContainerLeft>
 
         <LinkContainerRight>
-          <Link to="/page4" onClick={handleDropdown}>
+          <Link to="/authorsPage" onClick={handleDropdown}>
             The Authors
           </Link>
 
