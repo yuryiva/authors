@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "../contactForm/ContactForm";
+import PreOrderForm from "../preOrderForm/PreOrderForm";
 import Subscribe from "../subscribeForm/Subscribe";
 
 
@@ -11,6 +12,8 @@ export default function ShortStories() {
       <ContactForm />
       <hr/>
       <Subscribe />
+      <hr/>
+      <PreOrderForm />
     </div>
   );
 }
