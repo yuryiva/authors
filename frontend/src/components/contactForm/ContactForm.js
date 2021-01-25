@@ -33,7 +33,7 @@ const ContactForm = () => {
     }
 
     axios
-      .post("http://localhost:3001/upload", data, {
+      .post("http://localhost:8080/upload", data, {
         // receive two    parameter endpoint url ,form data
       })
       .then(
@@ -60,7 +60,7 @@ const ContactForm = () => {
       imageName: filesToUpload[0].name,
       topicChosen,
     };
-    let response = await fetch("http://localhost:3001/contact", {
+    let response = await fetch("http://localhost:8080/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

@@ -31,7 +31,7 @@ const PreOrderForm = () => {
     };
     // details['totalOrder'] = totalOrder;
 
-    let response = await fetch(`http://localhost:3001/preorder`, {
+    let response = await fetch(`http://localhost:8080/preorder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
