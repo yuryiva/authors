@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const OrderForm = () => {
+const PreOrderForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
   const [amountOfBooks, setAmountOfBooks] = useState(0);
@@ -97,7 +97,7 @@ const OrderForm = () => {
   );
 };
 
-export default OrderForm;
+export default PreOrderForm;
 
 const SendMessageForm = styled.div`
   width: 50%;

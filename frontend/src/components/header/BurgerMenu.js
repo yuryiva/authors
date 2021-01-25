@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ open, setOpen }) => {
 
@@ -10,6 +11,10 @@ const BurgerMenu = ({ open, setOpen }) => {
 
     return (
       <BurgerContainer>
+        <Link to="/">
+          <LogoImage />
+        </Link>
+
         <StyledBurger 
           open={open} 
           onClick={handleBurgerMenu}
@@ -25,6 +30,7 @@ const BurgerMenu = ({ open, setOpen }) => {
 
 // Burger container
 const BurgerContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 100px;
   display: flex; 
@@ -78,6 +84,15 @@ const StyledBurger = styled.button`
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
+`
+
+const LogoImage = styled.img`
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 25px; 
+    left: 25px;
+    z-index: 5;
 `
 
 export default BurgerMenu;

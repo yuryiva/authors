@@ -3,11 +3,12 @@ import React, { useState } from "react";
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import MainSection from "./components/mainSection/MainSection";
-import Page1 from "./components/page1/Page1";
-import Page2 from "./components/page2/Page2";
-import Page3 from "./components/page3/Page3";
-import Page4 from "./components/page4/Page4";
+import LandingPage from "./components/landingPage/LandingPage";
+import Authors from "./components/authorsPage/Authors";
+import Books from "./components/books/Books";
+import Podcasts from "./components/podcasts/Podcasts";
+import ShortStories from "./components/shortStories/ShortStories";
+import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 import BurgerMenu from "./components/header/BurgerMenu";
 import Checkout from "./components/payment/Checkout";
 
@@ -20,11 +21,12 @@ const App = () => {
       <Header open={open} setOpen={setOpen} />
 
       <Switch>
-        <Route exact path="/" render={(props) => <MainSection {...props} />} />
-        <Route path="/page1" render={(props) => <Page1 {...props} />} />
-        <Route path="/page2" render={(props) => <Page2 {...props} />} />
-        <Route path="/page3" render={(props) => <Page3 {...props} />} />
-        <Route path="/page4" render={(props) => <Page4 {...props} />} />
+        <Route exact path="/" render={(props) => <LandingPage {...props} />} />
+        <Route path="/authorsPage" render={(props) => <Authors {...props} />} />
+        <Route path="/books" render={(props) => <Books {...props} />} />
+        <Route path="/podcasts" render={(props) => <Podcasts {...props} />} />
+        <Route path="/shortStories" render={(props) => <ShortStories {...props} />} />
+        <Route path="/joinTheMovement" render={(props) => <JoinTheMovement {...props} />} />
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
