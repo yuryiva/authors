@@ -6,12 +6,20 @@ const BurgerMenu = ({ open, setOpen }) => {
 
   const handleBurgerMenu = () => {
     let closed = !open;
-    setOpen(closed);
+    setOpen(closed);    
+  }
+
+  const handleLogo = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
     return (
       <BurgerContainer>
-        <Link to="/">
+        <Link to="/" onClick={handleLogo}>
           <LogoImage />
         </Link>
 
@@ -30,7 +38,7 @@ const BurgerMenu = ({ open, setOpen }) => {
 
 // Burger container
 const BurgerContainer = styled.div`
-  /* position: relative; */
+  /* position: relative; */  
   position: fixed;
   width: 100%;
   height: 100px;
@@ -38,7 +46,7 @@ const BurgerContainer = styled.div`
   justify-content: center;
   align-items: center; 
   z-index: 20;
-  /* color: transparent; */
+  /* background-color: lightgray; */
 `
 
 // Styled burger menu
@@ -95,7 +103,7 @@ const LogoImage = styled.img`
   position: absolute;
   top: 25px; 
   left: 25px;
-  z-index: 5;
+  /* z-index: 5; */
 `
 
 export default BurgerMenu;

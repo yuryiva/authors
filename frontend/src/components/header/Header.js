@@ -9,6 +9,11 @@ const Header = ({ open, setOpen }) => {
   const handleDropdown = () => {
     let closed = !open;
     setOpen(closed);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      // behavior: 'smooth'
+    });
   }
 
   return (
@@ -59,7 +64,9 @@ const Header = ({ open, setOpen }) => {
 
 // Styling navigation menu 
 const NavigationMenu = styled.nav`  
-  position: relative;
+  /* position: relative; */
+  /* position: absolute; */
+  position: fixed;
   display: flex;  
   /* justify-content: center; */
   justify-content: space-evenly;
@@ -67,11 +74,10 @@ const NavigationMenu = styled.nav`
   /* background: #EFFFFA; */
   background: #fff;
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};  
-  height: 100vh;  
+  height: 100vh;     
   width: 100vw;
   text-align: left;
-  padding: 2rem;  
-  position: absolute;
+  padding: 2rem;    
   top: 0;
   left: 0;
   z-index: 9;
