@@ -30,12 +30,15 @@ const BurgerMenu = ({ open, setOpen }) => {
 
 // Burger container
 const BurgerContainer = styled.div`
-  position: relative;
+  /* position: relative; */
+  position: fixed;
   width: 100%;
   height: 100px;
   display: flex; 
   justify-content: center;
   align-items: center; 
+  z-index: 20;
+  /* color: transparent; */
 `
 
 // Styled burger menu
@@ -65,7 +68,7 @@ const StyledBurger = styled.button`
   div {    
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => open ? '#0D0C1D' : '#0D0C1D'};
+    background: ${({ open }) => open ? '#000' : '#fff'};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -87,12 +90,12 @@ const StyledBurger = styled.button`
 `
 
 const LogoImage = styled.img`
-    width: 30px;
-    height: 50px;
-    position: absolute;
-    top: 25px; 
-    left: 25px;
-    z-index: 5;
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  top: 25px; 
+  left: 25px;
+  z-index: 5;
 `
 
 export default BurgerMenu;

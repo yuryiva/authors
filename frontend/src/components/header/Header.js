@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import photo from '../../assets/photo6.jpg';
-// import Logo from "./Logo";
 
 
 const Header = ({ open, setOpen }) => {  
@@ -13,11 +12,7 @@ const Header = ({ open, setOpen }) => {
   }
 
   return (
-    <NavigationMenu open={ open }>   
-
-      {/* <Logo /> */}
-      
-      
+    <NavigationMenu open={ open }> 
 
       <PhotoSection>
         <img src={photo} alt="authors" />
