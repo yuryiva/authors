@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import photo from '../../assets/photo6.jpg';
-
+// import Logo from "./Logo";
 
 
 const Header = ({ open, setOpen }) => {  
@@ -15,15 +15,24 @@ const Header = ({ open, setOpen }) => {
   return (
     <NavigationMenu open={ open }>   
 
+      {/* <Logo /> */}
+      
+      
+
       <PhotoSection>
         <img src={photo} alt="authors" />
       </PhotoSection>
 
       <LinkSection>
-        <LinkContainerLeft>
+        <LinkContainer>
+
           <Link to="/" onClick={handleDropdown}>
-            Home
-          </Link>   
+            <LogoImage />
+          </Link>
+
+          <Link to="/authorsPage" onClick={handleDropdown}>
+            The Authors
+          </Link>           
 
           <Link to="/books" onClick={handleDropdown}>
             Books
@@ -35,26 +44,17 @@ const Header = ({ open, setOpen }) => {
 
           <Link to="/shortStories" onClick={handleDropdown}>
             Short stories
-          </Link>
-        </LinkContainerLeft>
-
-        <LinkContainerRight>
-          <Link to="/authorsPage" onClick={handleDropdown}>
-            The Authors
-          </Link>
-
-          <Link to="/page5" onClick={handleDropdown}>
-            Who we are
-          </Link> 
+          </Link>          
         
-          <Link to="/page6" onClick={handleDropdown}>
+          <Link to="/joinTheMovement" onClick={handleDropdown}>
             Join the movement
-          </Link>      
+          </Link>   
 
-          <Link to="/page6" onClick={handleDropdown}>
-            Contact us
-          </Link>      
-        </LinkContainerRight>        
+          {/* <Link to="/" onClick={handleDropdown}>
+            Home
+          </Link>  */}
+
+        </LinkContainer>
       </LinkSection>               
       
     </NavigationMenu>
@@ -63,21 +63,23 @@ const Header = ({ open, setOpen }) => {
 
 
 // Styling navigation menu 
-const NavigationMenu = styled.nav`
-  /* overflow: auto; */
-  display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
+const NavigationMenu = styled.nav`  
+  position: relative;
+  display: flex;  
+  /* justify-content: center; */
+  justify-content: space-evenly;
   align-items: center;
-  background: #EFFFFA;
+  /* background: #EFFFFA; */
+  background: #fff;
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};  
   height: 100vh;  
   width: 100vw;
   text-align: left;
-  padding: 2rem;
+  padding: 2rem;  
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 9;
   transition: transform 0.5s ease-in-out;
 
   @media (max-width: 576px) {
@@ -89,7 +91,7 @@ const NavigationMenu = styled.nav`
   a {
     font-size: 1.5rem;    
     /* text-transform: uppercase; */
-    padding: 2rem 0;
+    padding: 1.6rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: #0D0C1D;
@@ -122,7 +124,7 @@ const NavigationMenu = styled.nav`
 
 const PhotoSection = styled.section`
   width: 30%;  
-  margin-right: 10%; 
+  /* margin-right: 10%;  */
   display: inline-block;
   overflow: hidden;
   border-radius: 5px;
@@ -173,9 +175,9 @@ const LinkSection = styled.section`
   }
 `
 
-const LinkContainerLeft = styled.div`
+const LinkContainer = styled.div`
   /* width: 50%; */
-  min-width: 450px;
+  /* min-width: 450px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,30 +200,13 @@ const LinkContainerLeft = styled.div`
   }
 `
 
-const LinkContainerRight = styled.div`
-  /* width: 50%; */
-  min-width: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  @media (max-width: 1560px) {
-    min-width: 400px;
-  } 
-
-  @media (max-width: 1400px) {
-    min-width: 350px;
-  }
-
-  @media (max-width: 900px) {    
-    text-align: right;
-  }
-
-  @media (max-width: 576px) {
-    min-width: auto;
-     width: 100%
-  }
+const LogoImage = styled.img`
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 25px; 
+    left: 25px;
+    z-index: 10;
 `
-
 
 export default Header;
