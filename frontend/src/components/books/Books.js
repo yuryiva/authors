@@ -1,11 +1,13 @@
 import React from "react";
 import PreOrderForm from "../preOrderForm/PreOrderForm";
+// import PreOrderForm from "../preOrderForm/PreOrderForm";
 
-export default function Page3() {
+export default function Books() {
   return (
     <div>
-      <hr /> I AM PAGE 3
+      <h3>This is the Books page</h3>
       <PreOrderForm />
+      <hr /> 
     </div>
   );
 }
