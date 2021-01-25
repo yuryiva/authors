@@ -36,7 +36,7 @@ const ContactForm = () => {
     }
 
     axios
-      .post("http://localhost:5000/upload", data, {
+      .post("http://localhost:8080/upload", data, {
         // receive two    parameter endpoint url ,form data
         onUploadProgress: (ProgressEvent) => {
           setStateOfLoading((ProgressEvent.loaded / ProgressEvent.total) * 100);
@@ -61,15 +61,17 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus("Sending...");
     const { name, email, message } = e.target.elements;
+
+    const imageName = filesToUpload ? filesToUpload[0].name : "";
     let details = {
       name: name.value,
       email: email.value,
       message: message.value,
       filesToUpload,
-      imageName: filesToUpload[0].name,
+      imageName: imageName,
       topicChosen,
     };
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch("http://localhost:8080/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
