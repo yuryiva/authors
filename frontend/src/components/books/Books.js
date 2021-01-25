@@ -72,8 +72,15 @@ export default function Books() {
 const ProductDetails = styled.div`
   width: 50%;
   margin: 100px;
+  h3 {
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
   p {
     border-bottom: 1px lightgray solid;
+    margin-bottom: 20px;
   }
 `;
 const PageWrapper = styled.div``;
@@ -97,6 +104,8 @@ const BookDescription = styled.div`
   margin: 0 40px;
   h3 {
     font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 `;
 const BookCheckOut = styled.div`
@@ -117,6 +126,7 @@ const BookCheckOut = styled.div`
     font-size: 20px;
     color: rgb(33, 105, 219);
     outline: none;
+    margin-top: 20px 20px;
   }
   button:hover {
     background-color: rgb(33, 105, 219);
@@ -131,8 +141,12 @@ const BookCheckOut = styled.div`
     font-size: 20px;
     display: flex;
     align-item: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
   p {
     border-bottom: 1px black solid;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 `;
