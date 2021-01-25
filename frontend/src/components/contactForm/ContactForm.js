@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Progress } from "reactstrap";
+// import { Progress } from "reactstrap";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -131,11 +131,11 @@ const ContactForm = () => {
               multiple // for multiple files upload
               onChange={onChangeHandler}
             />
-            <div className="form-group">
+            {/* <div className="form-group">
               <Progress max="100" color="success" value={stateOfLoading}>
                 {Math.round(stateOfLoading, 2)}%
               </Progress>
-            </div>
+            </div> */}
             <button type="button" onClick={onClickHandler}>
               {uploadButton}
             </button>
