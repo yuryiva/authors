@@ -15,17 +15,37 @@ const PreOrderForm = () => {
 
   const totalOrder = bookPrice * amountOfBooks;
 
+  const handleAnotherOrder = () => {
+    setSentMessage(false);
+    setAmountOfBooks(0);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
-    const { amount, name, address, email, phone, message } = e.target.elements;
+    const {
+      amount,
+      name,
+      email,
+      phone,
+      address,
+      city,
+      state,
+      country,
+      postcode,
+      message,
+    } = e.target.elements;
 
     let details = {
       amount: amount.value,
       name: name.value,
-      address: address.value,
       email: email.value,
       phone: phone.value,
+      address: address.value,
+      city: city.value,
+      state: state.value,
+      country: country.value,
+      postcode: postcode.value,
       message: message.value,
       totalOrder: totalOrder,
     };
@@ -52,7 +72,7 @@ const PreOrderForm = () => {
           {sentMessage === "ERROR" && (
             <p>SOMETHING WENT WRONG. TRY AGAIN PLEASE</p>
           )}
-          <button onClick={() => setSentMessage(false)}>
+          <button onClick={() => handleAnotherOrder()}>
             Make another order
           </button>
         </div>
@@ -71,23 +91,39 @@ const PreOrderForm = () => {
           </div>
           <div>TOTAL EUR: {totalOrder}</div>
           <div>
-          <label htmlFor="name">Full name:</label>
+            <label htmlFor="name">Full name:</label>
             <input type="text" id="name" required />
-          </div>
-          <div>
-            <label htmlFor="address">Postal address:</label>
-            <input type="text" id="address" required />
           </div>
           <div>
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" required />
           </div>
           <div>
-            <label htmlFor="phone">Phone number including country code:</label>
+            <label htmlFor="phone">Phone number:</label>
             <input type="tel" id="phone" required />
           </div>
           <div>
-            <label htmlFor="message">Any additional info:</label>
+            <label htmlFor="address">Address:</label>
+            <input type="text" id="address" required />
+          </div>
+          <div>
+            <label htmlFor="city">City/town:</label>
+            <input type="text" id="city" required />
+          </div>
+          <div>
+            <label htmlFor="state">State:</label>
+            <input type="text" id="state" />
+          </div>
+          <div>
+            <label htmlFor="country">Country:</label>
+            <input type="text" id="country" required />
+          </div>
+          <div>
+            <label htmlFor="postcode">Post code/ZIP:</label>
+            <input type="text" id="postcode" required />
+          </div>
+          <div>
+            <label htmlFor="message">Additional info:</label>
             <textarea id="message" />
           </div>
           <button type="submit">{status}</button>
