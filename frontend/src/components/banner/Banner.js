@@ -50,6 +50,7 @@ const BannerContainer = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
+
 `
 
 // const BannerImage = img

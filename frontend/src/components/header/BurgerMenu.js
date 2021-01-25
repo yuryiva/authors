@@ -14,7 +14,8 @@ const BurgerMenu = ({ open, setOpen }) => {
       top: 0,
       left: 0,
       behavior: 'smooth'
-    });
+    });    
+    setOpen(false);
   }
 
     return (
@@ -45,15 +46,15 @@ const BurgerContainer = styled.div`
   display: flex; 
   justify-content: center;
   align-items: center; 
-  z-index: 20;
+  z-index: 2;
   /* background-color: lightgray; */
 `
 
 // Styled burger menu
 const StyledBurger = styled.button`
-  /* position: absolute;
-  top: 50%;  
-  right: 50%; */  
+  /* position: absolute; */
+  /* top: 50px;   */
+  /* right: 50%;   */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -63,7 +64,7 @@ const StyledBurger = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 999;
 
   &:focus {
     outline: none;

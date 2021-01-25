@@ -26,9 +26,9 @@ const Header = ({ open, setOpen }) => {
       <LinkSection>
         <LinkContainer>
 
-          <Link to="/" onClick={handleDropdown}>
+          {/* <Link to="/" onClick={handleDropdown}>
             <LogoImage />
-          </Link>
+          </Link> */}
 
           <Link to="/authorsPage" onClick={handleDropdown}>
             The Authors
@@ -80,7 +80,7 @@ const NavigationMenu = styled.nav`
   padding: 2rem;    
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 1;
   transition: transform 0.5s ease-in-out;
 
   @media (max-width: 576px) {
