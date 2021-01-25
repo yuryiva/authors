@@ -19,7 +19,7 @@ const Subscribe = () => {
       email: email,
     };
 
-    let response = await fetch(`http://localhost:3001/subscribe`, {
+    let response = await fetch(`http://localhost:5000/subscribe`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
