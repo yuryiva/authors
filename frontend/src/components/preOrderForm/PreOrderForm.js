@@ -31,7 +31,7 @@ const PreOrderForm = () => {
     };
     // details['totalOrder'] = totalOrder;
 
-    let response = await fetch(`http://localhost:3001/preorder`, {
+    let response = await fetch(`http://localhost:8080/preorder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -71,7 +71,7 @@ const PreOrderForm = () => {
           </div>
           <div>TOTAL EUR: {totalOrder}</div>
           <div>
-            <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Full name:</label>
             <input type="text" id="name" required />
           </div>
           <div>
