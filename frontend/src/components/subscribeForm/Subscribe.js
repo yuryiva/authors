@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
-const Subscribe = () => {
-  const [status, setStatus] = useState("Submit");
+const SubscribeForm = () => {
+  const [status, setStatus] = useState("Subscribe");
   const [email, setEmail] = useState("");
   const [sentMessage, setSentMessage] = useState(false);
   const [showSubscribeComponent, setShowSubscribeComponent] = useState(true);
@@ -27,29 +26,29 @@ const Subscribe = () => {
       body: JSON.stringify(details),
     });
 
-    setStatus("Submit");
+    setStatus("Subscribe");
     let result = await response.json();
     setSentMessage(result.status);
   };
 
   return (
-    <SendMessageForm>
+    <>
       {showSubscribeComponent === true && (
         <div>
           {sentMessage ? (
             <div>
               {sentMessage === "ERROR" && (
                 <>
-                  <p>SOMETHING WENT WRONG</p>
+                  <p>Something went wrong...</p>
                   <button onClick={() => setSentMessage(false)}>
-                    TRY AGAIN PLEASE
+                    Try again please
                   </button>
                 </>
               )}
 
               {sentMessage === "SENT" && (
                 <div>
-                  <p>THANK YOU FOR SUBSCRIBING!</p>
+                  <p>Thank you for subscribing!</p>
                   <button onClick={() => setShowSubscribeComponent(false)}>
                     Close
                   </button>
@@ -59,31 +58,21 @@ const Subscribe = () => {
           ) : (
             <form onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="email">Please enter email to subscribe: </label>
-                <input id="email" onChange={handleChange} type="email" />
+                <input
+                  id="email"
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="Please insert email"
+                  required
+                />
               </div>
               <button type="submit">{status}</button>
             </form>
           )}
         </div>
       )}
-    </SendMessageForm>
+    </>
   );
 };
 
-export default Subscribe;
-
-const SendMessageForm = styled.div`
-  width: 50%;
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background: lightblue;
-
-  border: 2px solid black;
-`;
-
-// const SendMessageButton = styled.button`
-// font-size: ${({ Initial }) => Initial ? '50px': '20px'}
-// `;
+export default SubscribeForm;
