@@ -37,7 +37,7 @@ const App = () => {
         description={"Book(s) you bought"}
         amount={4.99}
       /> */}
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
