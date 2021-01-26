@@ -11,7 +11,9 @@ import ShortStories from "./components/shortStories/ShortStories";
 import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 import BurgerMenu from "./components/header/BurgerMenu";
 import Checkout from "./components/payment/Checkout";
+import PreOrderForm from "./components/preOrderForm/PreOrderForm";
 import AuthorsStory from './components/authorsPage/AuthorsStory';
+
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -25,10 +27,15 @@ const App = () => {
         <Route exact path="/" render={(props) => <LandingPage {...props} />} />
         <Route path="/authorsPage" render={(props) => <Authors {...props} />} />
         <Route path="/books" render={(props) => <Books {...props} />} />
+        <Route
+          path="/preOrderForm"
+          render={(props) => <PreOrderForm {...props} />}
+        />
         <Route path="/podcasts" render={(props) => <Podcasts {...props} />} />
         <Route path="/shortStories" render={(props) => <ShortStories {...props} />} />
         <Route path="/joinTheMovement" render={(props) => <JoinTheMovement {...props} />} />
         <Route exact path="/AuthorsStory" render={(props) => <AuthorsStory {...props} />} />
+
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
@@ -37,6 +44,7 @@ const App = () => {
         description={"Book(s) you bought"}
         amount={4.99}
       />
+
       <Footer />
     </div>
   );
