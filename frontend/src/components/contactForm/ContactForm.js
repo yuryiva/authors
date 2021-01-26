@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { Progress } from "reactstrap";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -7,8 +8,9 @@ const topics = ["topic1", "topic2", "topic3", "topic4", "topic5", "topic6"];
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
-  const [topicChosen, setTopicChosen] = useState("");
-
+  const [topicChosen, setTopicChosen] = useState(topics[0]);
+  const [stateOfLoading, setStateOfLoading] = useState(0);
+  const [uploadButton, setUploadButton] = useState("Upload");
   ///////////////// upload files
   const [filesToUpload, setFilesToUpload] = useState(null);
 
@@ -27,19 +29,26 @@ const ContactForm = () => {
   const onClickHandler = () => {
     const data = new FormData();
     console.log(filesToUpload);
+    console.log(stateOfLoading);
     for (let i = 0; i < filesToUpload.length; i++) {
       data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
-      console.log(data)
+      console.log(data);
     }
 
     axios
       .post("http://localhost:8080/upload", data, {
         // receive two    parameter endpoint url ,form data
+        onUploadProgress: (ProgressEvent) => {
+          setStateOfLoading((ProgressEvent.loaded / ProgressEvent.total) * 100);
+        },
       })
       .then(
         (res) => {
           console.log(res.statusText, "FILE UPLOADED");
           console.log(res);
+          {
+            setUploadButton("Uploaded");
+          }
         },
         (error) => {
           console.log(error, "FILE NOT UPLOADED");
@@ -52,12 +61,14 @@ const ContactForm = () => {
     e.preventDefault();
     setStatus("Sending...");
     const { name, email, message } = e.target.elements;
+
+    const imageName = filesToUpload ? filesToUpload[0].name : "";
     let details = {
       name: name.value,
       email: email.value,
       message: message.value,
       filesToUpload,
-      imageName: filesToUpload[0].name,
+      imageName: imageName,
       topicChosen,
     };
     let response = await fetch("http://localhost:8080/contact", {
@@ -70,8 +81,10 @@ const ContactForm = () => {
     setStatus("Submit");
     let result = await response.json();
     setSentMessage(result.status);
-    setTopicChosen("");
+    setTopicChosen(topics[0]);
     setFilesToUpload(null);
+    setStateOfLoading(0);
+    setUploadButton("Upload");
   };
   return (
     <SendMessageForm>
@@ -118,8 +131,13 @@ const ContactForm = () => {
               multiple // for multiple files upload
               onChange={onChangeHandler}
             />
+            {/* <div className="form-group">
+              <Progress max="100" color="success" value={stateOfLoading}>
+                {Math.round(stateOfLoading, 2)}%
+              </Progress>
+            </div> */}
             <button type="button" onClick={onClickHandler}>
-              Upload
+              {uploadButton}
             </button>
           </div>
 
