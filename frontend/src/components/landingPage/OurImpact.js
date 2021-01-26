@@ -74,7 +74,7 @@ const MainHeading = styled.div`
     }
 
     p {
-        font-size: 1.1.rem;
+        font-size: 1.1rem;
         margin: 50px auto;
     }
 
@@ -90,6 +90,7 @@ const OurImpactSection = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
     /* padding: 2rem; */
 
     @media (max-width: 1000px) {
@@ -122,6 +123,7 @@ const OurImpactPhoto = styled.div`
     width: 100%;    
     display: inline-block;
     overflow: hidden;
+    padding-left: 10%;
     /* border-radius: 5px; */
 
     img {
@@ -185,6 +187,7 @@ const OurValuesPhoto = styled.div`
     width: 100%;    
     display: inline-block;
     overflow: hidden;
+    padding-right: 10%;
     /* border-radius: 5px; */
 
     img {
