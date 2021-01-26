@@ -14,17 +14,11 @@ import Banner from "./components/banner/Banner";
 // import Checkout from "./components/payment/Checkout";
 
 const App = () => {
-  const [open, setOpen] = useState(false);
-  // const [scrollNavbar, setScrollNavbar] = useState(false); 
+  const [open, setOpen] = useState(false);  
 
   return (
     <div>
-      <BurgerMenu 
-        open={open} 
-        setOpen={setOpen} 
-        // scrollNavbar={scrollNavbar} 
-        // setScrollNavbar={setScrollNavbar} 
-      />
+      <BurgerMenu open={open} setOpen={setOpen} />
       <Header open={open} setOpen={setOpen} />
       <Banner />
 
@@ -43,7 +37,7 @@ const App = () => {
         description={"Book(s) you bought"}
         amount={4.99}
       /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

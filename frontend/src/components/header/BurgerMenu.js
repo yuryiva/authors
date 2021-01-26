@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ open, setOpen }) => {
-  const [scrollNavbar, setScrollNavbar] = useState('');  
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleNavbarScroll);
-  })
+  // const [navbar, setNavbar] = useState(false);  
+  // let test = navbar;
 
   // This method will toggle the dropdown menu ON/OFF
   const handleBurgerMenu = () => {
@@ -26,38 +23,37 @@ const BurgerMenu = ({ open, setOpen }) => {
   }
    
   // This method will change the colour of the navbar on scroll
-  const handleNavbarScroll = () => {
-    if(window.scrollY >= '100px'){      
-      setScrollNavbar(true) 
-    } else {
-      setScrollNavbar(false) 
-    }     
-  }  
-  
+  // const changeBackground = () => {    
+  //   if(window.scrollY >= 100){      
+  //     setNavbar(true) 
+  //   } else {
+  //     setNavbar(false) 
+  //   }     
+  // }  
+  // window.addEventListener('scroll', changeBackground);
 
     return (
-      <BurgerContainer>
-        <Link to="/" onClick={handleLogo}>
-          <LogoImage />
-        </Link>
+      <BurgerContainer>      
+          <Link to="/" onClick={handleLogo}>
+            <LogoImage />
+          </Link>
 
-        <StyledBurger 
-          open={open} 
-          onClick={handleBurgerMenu}
-        >
-            <div />
-            <div />
-            <div />
-        </StyledBurger>
+          <StyledBurger 
+            open={open} 
+            onClick={handleBurgerMenu}
+          >
+              <div />
+              <div />
+              <div />
+          </StyledBurger>              
       </BurgerContainer>
         
     )
 }
 
 // Burger container
-const BurgerContainer = styled.div`
-  /* position: relative; */  
-  background: ${({ scrollNavbar }) => scrollNavbar ? '#fff' : 'transparent'};  
+const BurgerContainer = styled.div`   
+  /* background: ${test => test ? '#fff' : 'transparent'};   */
   position: fixed;
   width: 100%;
   height: 100px;
@@ -91,23 +87,32 @@ const StyledBurger = styled.button`
   div {    
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => open ? '#000' : '#fff'};
+    /* background: ${({ open }) => open ? '#000' : '#fff'}; */
+    background: #000;
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
+    /* animation: glow 1s ease-in-out infinite alternate; */
 
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+      border: .2px solid #fff;
+      /* outline: .2px solid #fff; */
+      
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
       transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
+      border: .2px solid #fff;
+      /* outline: .2px solid #fff; */
     }
 
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+      border: .2px solid #fff;
+      /* outline: .2px solid #fff; */
     }
   }
 `

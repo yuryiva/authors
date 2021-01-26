@@ -39,8 +39,7 @@ export default function Banner() {
 const BannerContainer = styled.div`
     width: 100vw;
     height: 100vh;
-    position: relative;
-    /* top: -100px;     */
+    position: relative;    
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url(${photo});
     background-position: center;
     background-repeat: no-repeat;
