@@ -100,16 +100,13 @@ const PreOrderForm = () => {
 export default PreOrderForm;
 
 const SendMessageWrapper = styled.div`
-  width: 50%;
+  width: 40%;
   height: 40%;
   display: flex;
   flex-direction: row;
   text-align: center;
-  // background: lightgray;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 325px;
+  margin: auto;
 
   padding: 20px;
 
@@ -133,7 +130,6 @@ const SendMessageWrapper = styled.div`
 `;
 
 const SentMessageForm = styled.form`
-  // color: white;
   text-align: center;
 
   h5 {
