@@ -28,7 +28,7 @@ export default function Banner() {
                     alignSelf: 'center'
                 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 3, duration: 3.5 }}
+                transition={{ delay: 2, duration: 3.5 }}
             >
                 Join the movement and team up with authors of today
             </motion.h2>
@@ -49,8 +49,9 @@ const BannerContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    text-align: center;   
 
+    /* scroll-snap-align: start; */
 `
 
 // const BannerImage = img

@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from "react";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ open, setOpen }) => {
+  const [scrollNavbar, setScrollNavbar] = useState('');  
 
+  useEffect(() => {
+    window.addEventListener('scroll', handleNavbarScroll);
+  })
+
+  // This method will toggle the dropdown menu ON/OFF
   const handleBurgerMenu = () => {
     let closed = !open;
     setOpen(closed);    
   }
 
+  // This method will scroll to the top of the page when clicking on the logo
   const handleLogo = () => {
     window.scrollTo({
       top: 0,
@@ -17,6 +24,16 @@ const BurgerMenu = ({ open, setOpen }) => {
     });    
     setOpen(false);
   }
+   
+  // This method will change the colour of the navbar on scroll
+  const handleNavbarScroll = () => {
+    if(window.scrollY >= '100px'){      
+      setScrollNavbar(true) 
+    } else {
+      setScrollNavbar(false) 
+    }     
+  }  
+  
 
     return (
       <BurgerContainer>
@@ -40,21 +57,18 @@ const BurgerMenu = ({ open, setOpen }) => {
 // Burger container
 const BurgerContainer = styled.div`
   /* position: relative; */  
+  background: ${({ scrollNavbar }) => scrollNavbar ? '#fff' : 'transparent'};  
   position: fixed;
   width: 100%;
   height: 100px;
   display: flex; 
   justify-content: center;
   align-items: center; 
-  z-index: 2;
-  /* background-color: lightgray; */
+  z-index: 2;  
 `
 
 // Styled burger menu
-const StyledBurger = styled.button`
-  /* position: absolute; */
-  /* top: 50px;   */
-  /* right: 50%;   */
+const StyledBurger = styled.button` 
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -103,8 +117,7 @@ const LogoImage = styled.img`
   height: 50px;
   position: absolute;
   top: 25px; 
-  left: 25px;
-  /* z-index: 5; */
+  left: 25px;  
 `
 
 export default BurgerMenu;

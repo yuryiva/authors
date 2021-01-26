@@ -15,10 +15,16 @@ import Banner from "./components/banner/Banner";
 
 const App = () => {
   const [open, setOpen] = useState(false);
+  // const [scrollNavbar, setScrollNavbar] = useState(false); 
 
   return (
     <div>
-      <BurgerMenu open={open} setOpen={setOpen} />
+      <BurgerMenu 
+        open={open} 
+        setOpen={setOpen} 
+        // scrollNavbar={scrollNavbar} 
+        // setScrollNavbar={setScrollNavbar} 
+      />
       <Header open={open} setOpen={setOpen} />
       <Banner />
 
