@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import PreOrderFrom from "../preOrderForm/PreOrderForm";
+import { Link } from "react-router-dom";
+// import PreOrderForm from "../preOrderForm/PreOrderForm";
 
 <style>
   @import
@@ -8,10 +9,10 @@ import PreOrderFrom from "../preOrderForm/PreOrderForm";
 </style>;
 
 export default function Books() {
-  const [showPreOrder, togglePreOrder] = useState(false);
-  const handlePreOrderToggle = () => {
-    togglePreOrder(!showPreOrder);
-  };
+  // const [showPreOrder, togglePreOrder] = useState(false);
+  // const handlePreOrderToggle = () => {
+  //   togglePreOrder(!showPreOrder);
+  // };
 
   return (
     <PageWrapper>
@@ -48,9 +49,10 @@ export default function Books() {
           <p>Category: Mystery</p>
           <p>Delivery in 2-5 working days.</p>
           <p>Eligible for free delivery with a 15% donation.</p>
-          {/* <button>Pre-Order</button> */}
-          <button onClick={handlePreOrderToggle}>Pre-Order</button>
-          {/* <button onClick={() => showPreOrder()}>Pre-Order</button> */}
+          <Link to="/preOrderForm">
+            <button>Pre-Order</button>
+          </Link>
+          {/* <button onClick={handlePreOrderToggle}>Pre-Order</button> */}
         </BookCheckOut>
       </BookWrapper>
 
@@ -65,7 +67,7 @@ export default function Books() {
         <p>Language</p>
         <p>Dimensions</p>
       </ProductDetails>
-      {showPreOrder && <PreOrderFrom />}
+      {/* {showPreOrder && <PreOrderFrom />} */}
     </PageWrapper>
   );
 }

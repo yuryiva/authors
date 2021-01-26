@@ -43,9 +43,9 @@ const PreOrderForm = () => {
     setSentMessage(result.status);
   };
   return (
-    <SendMessageForm>
+    <SendMessageWrapper>
       {sentMessage ? (
-        <div>
+        <ResponseDiv>
           {sentMessage === "SENT" && (
             <p>THANK YOU FOR THE PREORDER! WE'LL GET BACK TO YOU ASAP</p>
           )}
@@ -55,9 +55,9 @@ const PreOrderForm = () => {
           <button onClick={() => setSentMessage(false)}>
             Make another order
           </button>
-        </div>
+        </ResponseDiv>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <SentMessageForm onSubmit={handleSubmit}>
           <h5>PRICE PER BOOK: {bookPrice} EUR</h5>
           <div>
             <label htmlFor="amount">Amount of books</label>
@@ -71,7 +71,7 @@ const PreOrderForm = () => {
           </div>
           <div>TOTAL EUR: {totalOrder}</div>
           <div>
-          <label htmlFor="name">Full name:</label>
+            <label htmlFor="name">Full name:</label>
             <input type="text" id="name" required />
           </div>
           <div>
@@ -91,23 +91,81 @@ const PreOrderForm = () => {
             <textarea id="message" />
           </div>
           <button type="submit">{status}</button>
-        </form>
+        </SentMessageForm>
       )}
-    </SendMessageForm>
+    </SendMessageWrapper>
   );
 };
 
 export default PreOrderForm;
 
-const SendMessageForm = styled.div`
+const SendMessageWrapper = styled.div`
   width: 50%;
-  height: 30%;
+  height: 40%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
-  background: lightblue;
+  // background: lightgray;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 325px;
 
-  border: 2px solid black;
+  padding: 20px;
+
+  border: 2px solid gray;
+  button {
+    border-radius: 5px;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid grey;
+    font-size: 20px;
+    color: grey;
+    outline: none;
+    margin-top: 25px;
+  }
+  button:hover {
+    background-color: lightgrey;
+    color: white;
+  }
+`;
+
+const SentMessageForm = styled.form`
+  // color: white;
+  text-align: center;
+
+  h5 {
+    margin-bottom: 10px;
+  }
+  div {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 90%;
+    height: 20px;
+    border: 0;
+    border-bottom: 1px solid black;
+    // background-color: lightgray;
+    margin: 20px 0;
+    text-decoration: 0;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  input:hover {
+    background-color: rgba(192, 192, 192, 0.3);
+  }
+`;
+
+const ResponseDiv = styled.div`
+  height: 80%;
+  button {
+    height: 80%;
+    width: 50%;
+  }
 `;
 
 // const SendMessageButton = styled.button`
