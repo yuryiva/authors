@@ -123,11 +123,11 @@ const OurImpactPhoto = styled.div`
     width: 100%;    
     display: inline-block;
     overflow: hidden;
-    padding-left: 10%;
+    margin-left: 10%;
     /* border-radius: 5px; */
 
     img {
-        display: block;
+        display: block;        
         width: 100%;
         /* height:300px;   */
         background-repeat: no-repeat;
@@ -187,7 +187,7 @@ const OurValuesPhoto = styled.div`
     width: 100%;    
     display: inline-block;
     overflow: hidden;
-    padding-right: 10%;
+    margin-right: 10%;
     /* border-radius: 5px; */
 
     img {
