@@ -24,7 +24,7 @@ export default function Banner() {
                     opacity: 0, 
                     color: '#fff', 
                     fontSize: '1.2rem',
-                    padding: '25px 15px',
+                    padding: '25px 20px',
                     alignSelf: 'center'
                 }}
                 animate={{ opacity: 1 }}

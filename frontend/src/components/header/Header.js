@@ -50,10 +50,6 @@ const Header = ({ open, setOpen }) => {
             Join the movement
           </Link>   
 
-          {/* <Link to="/" onClick={handleDropdown}>
-            Home
-          </Link>  */}
-
         </LinkContainer>
       </LinkSection>               
       
@@ -64,14 +60,11 @@ const Header = ({ open, setOpen }) => {
 
 // Styling navigation menu 
 const NavigationMenu = styled.nav`  
-  /* position: relative; */
-  /* position: absolute; */
   position: fixed;
   display: flex;  
   /* justify-content: center; */
   justify-content: space-evenly;
-  align-items: center;
-  /* background: #EFFFFA; */
+  align-items: center;  
   background: #fff;
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};  
   height: 100vh;     
@@ -84,9 +77,9 @@ const NavigationMenu = styled.nav`
   transition: transform 0.5s ease-in-out;
 
   @media (max-width: 576px) {
-      width: 100%;  
-      min-height: 100vh;
-      height: auto;   
+    width: 100%;  
+    min-height: 100vh;
+    height: auto;   
   }
 
   a {
@@ -107,13 +100,18 @@ const NavigationMenu = styled.nav`
       font-size: 1.3rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1230px) {
       font-size: 1.2rem;
     }
 
+    @media (max-width: 900px) {
+      font-size: 1.4rem;
+      padding: 2rem 0;
+    }
+
     @media (max-width: 576px) {
-      font-size: 1rem;
-      text-align: center;
+      font-size: 1.1rem;
+      /* text-align: center; */
       
     }
 
@@ -124,8 +122,8 @@ const NavigationMenu = styled.nav`
 `
 
 const PhotoSection = styled.section`
-  width: 30%;  
-  /* margin-right: 10%;  */
+  /* width: 30%;   */
+  width: 500px;    
   display: inline-block;
   overflow: hidden;
   border-radius: 5px;
@@ -146,7 +144,19 @@ const PhotoSection = styled.section`
     }
   }
 
-  @media (max-width: 1230px) {
+  @media (max-width: 1400px) {
+    width: 400px;;
+  }
+
+  /* @media (max-width: 1230px) {
+    width: 300px;
+  } */
+
+  @media (max-width: 1100px) {
+    width: 40%;
+  }
+
+  @media (max-width: 900px) {
     display: none;
   }
 
@@ -161,25 +171,29 @@ const LinkSection = styled.section`
   justify-content: space-around;
 
   @media (max-width: 1230px) {
-    width: 90%;
+    /* width: 90%; */
   }
 
   @media (max-width: 900px) {
-    width: 90%;
+    width: 100%;
+    display: flex;    
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column; 
-    text-align: center;
+    /* text-align: center; */
   }
 
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     width: 100%;  
     margin-top: 50px;    
-  }
+  } */
 `
 
 const LinkContainer = styled.div`
   /* width: 50%; */
   /* min-width: 450px; */
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 
@@ -191,23 +205,25 @@ const LinkContainer = styled.div`
     min-width: 350px;
   }  
 
-  @media (max-width: 900px) {    
+  @media (max-width: 900px) { 
+    /* width: 100%;    */
     text-align: left;
+    margin: 0 auto;
   }
 
   @media (max-width: 576px) {
-    min-width: auto;
-     width: 100%
+    width: auto;  
+    padding: 0 25px;  
   }
 `
 
-const LogoImage = styled.img`
-    width: 30px;
-    height: 50px;
-    position: absolute;
-    top: 25px; 
-    left: 25px;
-    z-index: 10;
-`
+// const LogoImage = styled.img`
+//     width: 30px;
+//     height: 50px;
+//     position: absolute;
+//     top: 25px; 
+//     left: 25px;
+//     z-index: 10;
+// `
 
 export default Header;
