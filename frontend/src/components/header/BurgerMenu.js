@@ -97,22 +97,18 @@ const StyledBurger = styled.button`
 
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-      border: .2px solid #fff;
-      /* outline: .2px solid #fff; */
-      
+      border: .2px solid #fff; 
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
       transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-      border: .2px solid #fff;
-      /* outline: .2px solid #fff; */
+      border: .2px solid #fff;      
     }
 
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-      border: .2px solid #fff;
-      /* outline: .2px solid #fff; */
+      border: .2px solid #fff;      
     }
   }
 `

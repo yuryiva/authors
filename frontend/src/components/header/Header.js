@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import photo from '../../assets/photo6.jpg';
 
-
 const Header = ({ open, setOpen }) => {  
 
   const handleDropdown = () => {
@@ -29,26 +28,26 @@ const Header = ({ open, setOpen }) => {
           {/* <Link to="/" onClick={handleDropdown}>
             <LogoImage />
           </Link> */}
-
-          <Link to="/authorsPage" onClick={handleDropdown}>
-            The Authors
-          </Link>           
-
-          <Link to="/books" onClick={handleDropdown}>
-            Books
-          </Link> 
-
-          <Link to="/podcasts" onClick={handleDropdown}>
-            Podcast
-          </Link>
-
-          <Link to="/shortStories" onClick={handleDropdown}>
-            Short stories
-          </Link>          
+         
+            <Link to="/authorsPage" onClick={handleDropdown}>
+              The Authors
+            </Link>
+     
+            <Link to="/books" onClick={handleDropdown}>
+              Books
+            </Link>
+       
+            <Link to="/podcasts" onClick={handleDropdown}>
+              Podcast
+            </Link>
         
-          <Link to="/joinTheMovement" onClick={handleDropdown}>
-            Join the movement
-          </Link>   
+            <Link to="/shortStories" onClick={handleDropdown}>
+              Short stories
+            </Link>  
+         
+            <Link to="/joinTheMovement" onClick={handleDropdown}>
+              Join the movement
+            </Link>                
 
         </LinkContainer>
       </LinkSection>               
@@ -74,7 +73,8 @@ const NavigationMenu = styled.nav`
   top: 0;
   left: 0;
   z-index: 1;
-  transition: transform 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out; */
+  
 
   @media (max-width: 576px) {
     width: 100%;  
@@ -83,14 +83,14 @@ const NavigationMenu = styled.nav`
   }
 
   a {
-    font-size: 1.5rem;    
-    /* text-transform: uppercase; */
-    padding: 1.6rem 0;
+    font-size: 1.5rem;        
+    padding: 1.7rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: #0D0C1D;
+    /* color: #0D0C1D; */
+    color: #000;
     text-decoration: none;
-    transition: color 0.3s linear;
+    /* transition: color 0.3s linear; */
 
     @media (max-width: 1560px) {
       font-size: 1.4rem;
@@ -115,8 +115,11 @@ const NavigationMenu = styled.nav`
       
     }
 
-    &:hover {
-      color: #343078;
+    &:hover {      
+      /* transform-origin: 0;            */
+      transition: 0.5s ease all;
+      transform: scale(1.1); 
+      
     }
   }
 `
@@ -162,25 +165,20 @@ const PhotoSection = styled.section`
 
 `
 
-const LinkSection = styled.section`
-  /* width: 60%; */
-  /* height: 500px; */
-  overflow: hidden;
+const LinkSection = styled.section`  
+  /* overflow: hidden; */
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;    
 
-  @media (max-width: 1230px) {
-    /* width: 90%; */
-  }
+  /* @media (max-width: 1230px) {
+    width: 90%;
+  } */
 
   @media (max-width: 900px) {
     width: 100%;
-    display: flex;    
-    /* justify-content: center; */
-    /* align-items: center; */
-    flex-direction: column; 
-    /* text-align: center; */
+    display: flex;  
+    flex-direction: column;     
   }
 
   /* @media (max-width: 576px) {
@@ -189,9 +187,7 @@ const LinkSection = styled.section`
   } */
 `
 
-const LinkContainer = styled.div`
-  /* width: 50%; */
-  /* min-width: 450px; */
+const LinkContainer = styled.div`  
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -205,8 +201,7 @@ const LinkContainer = styled.div`
     min-width: 350px;
   }  
 
-  @media (max-width: 900px) { 
-    /* width: 100%;    */
+  @media (max-width: 900px) {     
     text-align: left;
     margin: 0 auto;
   }
