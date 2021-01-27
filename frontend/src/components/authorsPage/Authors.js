@@ -59,9 +59,13 @@ color:white;
 :-webkit-scrollbar {
     display: none;
 }
+margin-top:-100px;
 `
 
 const StoryText = styled.div `
+width:100%;
+height:100%;
+
 img {
 min-width:100vw;
 height:100vh;
@@ -70,18 +74,19 @@ text-align:center;
 }
 
 h5,h4,p {
-    width:auto;
-    height:auto;
     text-align:left;
+    align-items:bottom;
     position:absolute;
-    width:50%;
-    margin-bottom:60px;
+    width:40%;
+    height:100%;
+    margin-top:60px;
 }
 
 h4 {
     position:absolute;
-    font-size:45px;
-    margin:50px;
+    font-size:40px;
+    margin-top:120px;
+    margin-left:50px;
 
 }
 
@@ -89,15 +94,15 @@ p {
     position:absolute;
     text-align:left;
     font-size:25px;
-    margin:120px 0 0 50px;
+    margin:220px 0 0 50px;
 }
 
 h5 {
     position:absolute;
     text-align:left;
     font-size:15px;
-    padding-top:2s0px;
-    margin:230px 0 0 50px;
+    padding-top:20px;
+    margin:400px 0 0 50px;
 }
 
 @media(max-width:800px) {

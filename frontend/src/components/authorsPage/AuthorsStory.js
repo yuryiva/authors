@@ -8,7 +8,7 @@ import 'aos/dist/aos.css'
 
 const AuthorsStory = () => {
     useEffect (() => {
-        Aos.init({duration:3000});
+        Aos.init({duration:2000});
     }, []);
       return (
 
@@ -26,6 +26,9 @@ const AuthorsStory = () => {
             <img src='https://images.unsplash.com/photo-1590452366152-7c59da8b9524?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80' alt='image' />
             </StorySection1Img>
            </StorySection1> 
+           <HR>
+               <hr/>
+           </HR>
            <StorySection2>
            <StorySection2Img>
             <img data-aos='fade-up' data-aos-duration="2000" src='https://images.unsplash.com/photo-1583795059494-44bc7e53384c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80' alt='image' />
@@ -77,7 +80,8 @@ flex-direction:column;
 justify-content:center;
 text-align:center;
 margin:0;
-padding:0
+padding:0;
+margin-top:-100px;
 `
 
 const StorySection1 = styled.div`
@@ -86,7 +90,7 @@ width:100%;
 justify-content:center;
 flex-direction:row;
 flex-wrap:wrap;
-margin-bottom:200px;
+margin-bottom:50px;
 
 `
 
@@ -96,21 +100,25 @@ const StorySection1Text = styled.div`
     height:auto;
     text-align:left;
 
-    h2{font-size:35px;}
+    h2{font-size:30px;}
 
     p {
-        font-size:16px;
-        line-height:1.5em;
+        font-size:12px;
+        line-height:2em;
+        margin-top:30px;
+        margin-bottom:30px;
     }
 
     @media(max-width:1100px){
-        width:70%
+        width:50%
+        
     }
 `
 
 const StorySection1Img = styled.div`
     img{
         width:70%;
+        height:80%;
     }
 `
 
@@ -140,12 +148,13 @@ display:flex;
 justify-content:center;
 text-align:center;
 width:100%;
+margin-bottom:100px;
 
 p{
     width:40%;
     line-height:2em;
     margin:0 100px;
-    margin-bottom:100px;
+    margin-bottom:10px;
     
     }
 
@@ -166,15 +175,21 @@ flex-wrap:wrap-reverse;
 width:100%;
 justify-content:center;
 text-align:center;
-margin:100px 0;
+margin-bottom:100px;
+margin-top:100px;
+
 
 `
 
 const StorySection3Text = styled.div`
-    width:30%;
+    width:40%;
     
     height:auto;
     margin-left:0;
+
+    img {
+        margin-bottom:100px;
+    }
     
     h2{font-size:25px;}
 
@@ -193,5 +208,20 @@ const StorySection3Img = styled.div`
         width:60%;
     }
 `
+
+const HR = styled.div`
+
+hr {
+border:0;
+background-color:lightgray;
+display:flex;
+justify-content:left;
+width:85%;
+height:4px;
+margin:0;
+padding:0;
+}
+`
+
 
 export default AuthorsStory;
