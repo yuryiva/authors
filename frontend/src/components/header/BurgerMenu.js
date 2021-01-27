@@ -3,8 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const BurgerMenu = ({ open, setOpen }) => {
-  // const [navbar, setNavbar] = useState(false);  
-  // let test = navbar;
+  const [navbar, setNavbar] = useState(false);   
 
   // This method will toggle the dropdown menu ON/OFF
   const handleBurgerMenu = () => {
@@ -23,14 +22,15 @@ const BurgerMenu = ({ open, setOpen }) => {
   }
    
   // This method will change the colour of the navbar on scroll
-  // const changeBackground = () => {    
-  //   if(window.scrollY >= 100){      
-  //     setNavbar(true) 
-  //   } else {
-  //     setNavbar(false) 
-  //   }     
-  // }  
-  // window.addEventListener('scroll', changeBackground);
+  const changeBackground = () => { 
+    console.log(window.scrollY);   
+    if(window.scrollY >= 727){      
+      setNavbar(true) 
+    } else {
+      setNavbar(false) 
+    }     
+  }  
+  window.addEventListener('scroll', changeBackground);
 
     return (
       <BurgerContainer>      
@@ -53,7 +53,7 @@ const BurgerMenu = ({ open, setOpen }) => {
 
 // Burger container
 const BurgerContainer = styled.div`   
-  /* background: ${test => test ? '#fff' : 'transparent'};   */
+  /* background: ${() => window.scrollY >= 727 ? '#fff' : 'transparent'};   */
   position: fixed;
   width: 100%;
   height: 100px;
@@ -93,22 +93,28 @@ const StyledBurger = styled.button`
     transition: all 0.3s linear;
     position: relative;
     transform-origin: 1px;
-    /* animation: glow 1s ease-in-out infinite alternate; */
+    
 
     :first-child {
       transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-      border: .2px solid #fff; 
+      background: #fff;
+      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
+      /* border: .2px solid #fff;  */
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
       transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-      border: .2px solid #fff;      
+      background: #fff;
+      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
+      /* border: .2px solid #fff;       */
     }
 
     :nth-child(3) {
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-      border: .2px solid #fff;      
+      background: #fff;
+      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
+      /* border: .2px solid #fff;       */
     }
   }
 `
