@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Context } from "../../context/Context";
 
 const PreOrderForm = () => {
   const [status, setStatus] = useState("Submit");
@@ -35,6 +36,7 @@ const PreOrderForm = () => {
       postcode,
       message,
     } = e.target.elements;
+    //console.log here from context...
 
     let details = {
       amount: amount.value,
@@ -49,6 +51,7 @@ const PreOrderForm = () => {
       message: message.value,
       totalOrder: totalOrder,
     };
+
     // details['totalOrder'] = totalOrder;
 
     let response = await fetch(`http://localhost:8080/preorder`, {
@@ -136,24 +139,26 @@ const PreOrderForm = () => {
 export default PreOrderForm;
 
 const SendMessageWrapper = styled.div`
-  width: 40%;
-  height: 40%;
+  width: 70%;
+  //height: 40%;
+  text-align: center;
   display: flex;
   flex-direction: row;
-  text-align: center;
   justify-content: center;
+  // margin: 20px;
+
   margin: auto;
 
-  padding: 20px;
+  padding: 10px;
 
-  border: 2px solid gray;
+  border: 1px lightgray solid;
   button {
     border-radius: 5px;
-    width: 20%;
+    width: 35%;
     height: 40px;
     text-align: center;
     background-color: white;
-    border: 2px solid grey;
+    border: 1px lightgray solid;
     font-size: 20px;
     color: grey;
     outline: none;
@@ -166,21 +171,16 @@ const SendMessageWrapper = styled.div`
 `;
 
 const SentMessageForm = styled.form`
-  text-align: center;
-
   h5 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
-  div {
-    margin-bottom: 10px;
-  }
+
   input {
     width: 90%;
     height: 20px;
     border: 0;
     border-bottom: 1px solid black;
-    // background-color: lightgray;
-    margin: 20px 0;
+    margin: 10px 0;
     text-decoration: 0;
     outline: none;
     cursor: pointer;
