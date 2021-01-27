@@ -11,6 +11,7 @@ const fromDollarToCent = (amount) => parseInt(amount * 100);
 
 const successPayment = (data) => {
   console.log(data);
+  //send email here stored in context for all form data.
   alert("Payment Successful");
 };
 

@@ -33,9 +33,21 @@ router.post("/preorder", (req, res) => {
   const amount = req.body.amount;
   const totalOrder = req.body.totalOrder;
   const name = req.body.name;
-  const address = req.body.address;
+  
   const email = req.body.email;
   const phone = req.body.phone;
+  const address = req.body.address;
+  const city = req.body.city;
+  const state = req.body.state;
+  const country = req.body.country;
+  const postcode = req.body.postcode;
+
+
+
+
+
+
+
   const message = req.body.message;
 
   const mail = {
@@ -47,7 +59,16 @@ router.post("/preorder", (req, res) => {
             <h1>For the total amount of: ${totalOrder} EUR</h1>  
             <h2>Email to contact: <h1>${email}</h1></h2>
             <h2>Phone number: <h1>${phone}</h1></h2>
-            <h2>Postal address: <h1>${address}</h1></h2>
+            <h2>Address: <h1>${address}</h1></h2>
+            <h2>City: <h1>${city}</h1></h2>
+            <h2>State: <h1>${state}</h1></h2>
+            <h2>Country: <h1>${country}</h1></h2>
+            <h2>Postcode: <h1>${postcode}</h1></h2>
+
+
+
+
+
             <h2>Additional info if any: ${message}</h2>
             <img src='https://www.routledge.com/rsc/images/crccms/TFG202001-Authors-r3.jpg' alt='authors_logo'/>`,
   };
