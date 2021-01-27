@@ -2,22 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import photo from '../../assets/photo6.jpg';
-// import Logo from "./Logo";
-
 
 const Header = ({ open, setOpen }) => {  
 
   const handleDropdown = () => {
     let closed = !open;
     setOpen(closed);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      // behavior: 'smooth'
+    });
   }
 
   return (
-    <NavigationMenu open={ open }>   
-
-      {/* <Logo /> */}
-      
-      
+    <NavigationMenu open={ open }> 
 
       <PhotoSection>
         <img src={photo} alt="authors" />
@@ -26,33 +25,29 @@ const Header = ({ open, setOpen }) => {
       <LinkSection>
         <LinkContainer>
 
-          <Link to="/" onClick={handleDropdown}>
-            <LogoImage />
-          </Link>
-
-          <Link to="/authorsPage" onClick={handleDropdown}>
-            The Authors
-          </Link>           
-
-          <Link to="/books" onClick={handleDropdown}>
-            Books
-          </Link> 
-
-          <Link to="/podcasts" onClick={handleDropdown}>
-            Podcast
-          </Link>
-
-          <Link to="/shortStories" onClick={handleDropdown}>
-            Short stories
-          </Link>          
-        
-          <Link to="/joinTheMovement" onClick={handleDropdown}>
-            Join the movement
-          </Link>   
-
           {/* <Link to="/" onClick={handleDropdown}>
-            Home
-          </Link>  */}
+            <LogoImage />
+          </Link> */}
+         
+            <Link to="/authorsPage" onClick={handleDropdown}>
+              The Authors
+            </Link>
+     
+            <Link to="/books" onClick={handleDropdown}>
+              Books
+            </Link>
+       
+            <Link to="/podcasts" onClick={handleDropdown}>
+              Podcast
+            </Link>
+        
+            <Link to="/shortStories" onClick={handleDropdown}>
+              Short stories
+            </Link>  
+         
+            <Link to="/joinTheMovement" onClick={handleDropdown}>
+              Join the movement
+            </Link>                
 
         </LinkContainer>
       </LinkSection>               
@@ -64,39 +59,39 @@ const Header = ({ open, setOpen }) => {
 
 // Styling navigation menu 
 const NavigationMenu = styled.nav`  
-  position: relative;
+  position: fixed;
   display: flex;  
   /* justify-content: center; */
   justify-content: space-evenly;
-  align-items: center;
-  /* background: #EFFFFA; */
+  align-items: center;  
   background: #fff;
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};  
-  height: 100vh;  
+  height: 100vh;     
   width: 100vw;
   text-align: left;
-  padding: 2rem;  
-  position: absolute;
+  padding: 2rem;    
   top: 0;
   left: 0;
-  z-index: 9;
+  z-index: 1;
   transition: transform 0.5s ease-in-out;
+  
 
   @media (max-width: 576px) {
-      width: 100%;  
-      min-height: 100vh;
-      height: auto;   
+    width: 100%;  
+    min-height: 100vh;
+    height: auto;   
   }
 
   a {
-    font-size: 1.5rem;    
-    /* text-transform: uppercase; */
-    padding: 1.6rem 0;
+    font-size: 1.5rem;        
+    padding: 1.7rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
-    color: #0D0C1D;
+    /* color: #0D0C1D; */
+    color: #000;
     text-decoration: none;
-    transition: color 0.3s linear;
+    transform-origin: 0; 
+    /* transition: color 0.3s linear; */
 
     @media (max-width: 1560px) {
       font-size: 1.4rem;
@@ -106,25 +101,33 @@ const NavigationMenu = styled.nav`
       font-size: 1.3rem;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1230px) {
       font-size: 1.2rem;
     }
 
+    @media (max-width: 900px) {
+      font-size: 1.4rem;
+      padding: 2rem 0;
+    }
+
     @media (max-width: 576px) {
-      font-size: 1rem;
-      text-align: center;
+      font-size: 1.1rem;
+      /* text-align: center; */
       
     }
 
-    &:hover {
-      color: #343078;
+    &:hover {      
+                
+      transition: 0.5s ease-out all;
+      transform: scale(1.1); 
+      
     }
   }
 `
 
 const PhotoSection = styled.section`
-  width: 30%;  
-  /* margin-right: 10%;  */
+  /* width: 30%;   */
+  width: 500px;    
   display: inline-block;
   overflow: hidden;
   border-radius: 5px;
@@ -145,40 +148,49 @@ const PhotoSection = styled.section`
     }
   }
 
-  @media (max-width: 1230px) {
+  @media (max-width: 1400px) {
+    width: 400px;;
+  }
+
+  /* @media (max-width: 1230px) {
+    width: 300px;
+  } */
+
+  @media (max-width: 1100px) {
+    width: 40%;
+  }
+
+  @media (max-width: 900px) {
     display: none;
   }
 
 `
 
-const LinkSection = styled.section`
-  /* width: 60%; */
-  /* height: 500px; */
-  overflow: hidden;
+const LinkSection = styled.section`  
+  /* overflow: hidden; */
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;    
 
-  @media (max-width: 1230px) {
+  /* @media (max-width: 1230px) {
     width: 90%;
-  }
+  } */
 
   @media (max-width: 900px) {
-    width: 90%;
-    flex-direction: column; 
-    text-align: center;
+    width: 100%;
+    display: flex;  
+    flex-direction: column;     
   }
 
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     width: 100%;  
     margin-top: 50px;    
-  }
+  } */
 `
 
-const LinkContainer = styled.div`
-  /* width: 50%; */
-  /* min-width: 450px; */
+const LinkContainer = styled.div`  
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 
@@ -190,23 +202,24 @@ const LinkContainer = styled.div`
     min-width: 350px;
   }  
 
-  @media (max-width: 900px) {    
+  @media (max-width: 900px) {     
     text-align: left;
+    margin: 0 auto;
   }
 
   @media (max-width: 576px) {
-    min-width: auto;
-     width: 100%
+    width: auto;  
+    padding: 0 25px;  
   }
 `
 
-const LogoImage = styled.img`
-    width: 30px;
-    height: 50px;
-    position: absolute;
-    top: 25px; 
-    left: 25px;
-    z-index: 10;
-`
+// const LogoImage = styled.img`
+//     width: 30px;
+//     height: 50px;
+//     position: absolute;
+//     top: 25px; 
+//     left: 25px;
+//     z-index: 10;
+// `
 
 export default Header;
