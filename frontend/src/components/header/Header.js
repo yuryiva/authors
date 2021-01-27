@@ -90,6 +90,7 @@ const NavigationMenu = styled.nav`
     /* color: #0D0C1D; */
     color: #000;
     text-decoration: none;
+    transform-origin: 0; 
     /* transition: color 0.3s linear; */
 
     @media (max-width: 1560px) {
@@ -116,8 +117,8 @@ const NavigationMenu = styled.nav`
     }
 
     &:hover {      
-      /* transform-origin: 0;            */
-      transition: 0.5s ease all;
+                
+      transition: 0.5s ease-out all;
       transform: scale(1.1); 
       
     }
