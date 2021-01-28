@@ -75,6 +75,7 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 999;
+  color: #000;
 
   &:focus {
     outline: none;
@@ -88,7 +89,7 @@ const StyledBurger = styled.button`
     width: 2rem;
     height: 0.25rem;
     /* background: ${({ open }) => open ? '#000' : '#fff'}; */
-    background: #000;
+    /* background: #000; */
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -96,25 +97,19 @@ const StyledBurger = styled.button`
     
 
     :first-child {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-      background: #fff;
-      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
-      /* border: .2px solid #fff;  */
+      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};      
+      background: ${({ open }) => window.scrollY >= 727 || open ? '#000' : '#fff'};      
     }
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
-      background: #fff;
-      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
-      /* border: .2px solid #fff;       */
+      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};      
+      background: ${({ open }) => window.scrollY >= 727 || open ? '#000' : '#fff'};      
     }
 
     :nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-      background: #fff;
-      background: ${() => window.scrollY >= 727 ? '#000' : '#fff'};
-      /* border: .2px solid #fff;       */
+      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};      
+      background: ${({ open }) => window.scrollY >= 727 || open ? '#000' : '#fff'};     
     }
   }
 `
