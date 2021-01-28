@@ -22,7 +22,7 @@ app.use("/", [contactRouter, preOrderRouter, testRouter,subscribeRouter]);
 ////////////////// UPLOAD FILES
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "contact");//////////////////where is it better to save files for uploading?
+    cb(null, "contact/uploads");//////////////////where is it better to save files for uploading?
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);

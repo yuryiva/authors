@@ -2,9 +2,18 @@ const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
 const ck = require("ckey");
-
+const delFiles = require('./delFiles')
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
+
+
+// const rimraf = require("rimraf");
+
+// const path = require("path");
+
+// const fs = require("fs");
+
+// const uploadsDir = __dirname + "/uploads/"; 
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
@@ -34,7 +43,7 @@ router.post("/contact", (req, res) => {
     ? [
         {
           filename: imageName,
-          path: `./contact/${imageName}`,
+          path: `./contact/uploads/${imageName}`,
         },
       ]
     : "";
@@ -55,9 +64,32 @@ router.post("/contact", (req, res) => {
     if (error) {
       res.json({ status: "ERROR" });
     } else {
-      res.json({ status: "SENT" });
+      res.json({ status: "SENT" })
+      .then(
+        delFiles
+        //  fs.readdir(uploadsDir, function (err, files) {
+        //   files.forEach(function (file, index) {
+        //     fs.stat(path.join(uploadsDir, file), function (err, stat) {
+        //       if (err) {
+        //         return console.error(err);
+        //       }
+        
+        //       setTimeout(() => {
+        //         return rimraf(path.join(uploadsDir, file), function (err) {
+        //           if (err) {
+        //             return console.error(err);
+        //           }
+        //           console.log("successfully deleted");
+        //         });
+        //       }, 3000);
+      
+        //     });
+        //   });
+        // }) 
+      )
     }
-  });
+    
+  })
 });
 
 module.exports = router;
