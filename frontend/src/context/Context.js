@@ -25,26 +25,29 @@ class Provider extends Component {
 
   //preOrderForm function in charge of updating state..
 
-  getDataFromForm = () =>
+  getDataFromForm = (data) => {
+    console.log("Hello from context", data);
+
     this.setState({
-      amount: this.state.amount,
-      name: this.state.name,
-      email: this.state.email,
-      phone: this.state.phone,
-      address: this.state.address,
-      city: this.state.city,
-      state: this.state.state,
-      country: this.state.country,
-      postcode: this.state.postcode,
-      message: this.state.message,
-      totalOrder: this.state.totalOrder,
+      amount: data.amount,
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      address: data.address,
+      city: data.city,
+      state: data.state,
+      country: data.country,
+      postcode: data.postcode,
+      message: data.message,
+      totalOrder: data.totalOrder,
     });
+  };
 
   render() {
     return (
       <Context.Provider
         value={{
-          //same fucntion as above getDataFromForm : this.getDataFromForm
+          //same function as above getDataFromForm : this.getDataFromForm
           getDataFromForm: this.getDataFromForm,
           state: this.state,
         }}
