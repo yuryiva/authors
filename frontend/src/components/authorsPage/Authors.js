@@ -1,79 +1,146 @@
-import React, {Route, Switch, useEffect} from 'react';
+// import React, {Route, Switch, useEffect} from 'react';
 import styled from 'styled-components';
 // import Footer from './components/Footer/Footer';
 <style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');</style>;
 <style>@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');</style>
 
+// let authorOne = 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80';
+let authorTwo = 'https://images.unsplash.com/photo-1473040767970-c16f84cc4c05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+// let authorThree = 'https://images.unsplash.com/photo-1585771742132-7d18efffe607?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80';
+// let authorFour = 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80';
+// let authorFive = 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80';
+// let authorSix = 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80';
+
 const Authors = () => {
 
-      return (
-            <ScrollWrapper>
-                <StoryText>
+    return (
+        <ScrollWrapper>
+            <StoryText>
                 <h4>Author One Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='photo' />
-                </StoryText>
-                <StoryText>
+                {/* <img src='https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+            </StoryText>
+            <StoryText>
                 <h4>Author Two Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1473040767970-c16f84cc4c05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80' alt='photo' />
-                </StoryText>
-                <StoryText>
+                {/* <img src='https://images.unsplash.com/photo-1473040767970-c16f84cc4c05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80' alt='author-profile' /> */}
+            </StoryText>
+            <StoryText>
                 <h4>Author Three Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1585771742132-7d18efffe607?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='photo' />
-                </StoryText>
-                <StoryText>
+                {/* <img src='https://images.unsplash.com/photo-1585771742132-7d18efffe607?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+            </StoryText>
+            <StoryText>
                 <h4>Author Four Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1587262538177-842ad13e290c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='photo' />
-                </StoryText>
-                <StoryText>
+                {/* <img src='https://images.unsplash.com/photo-1587262538177-842ad13e290c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+            </StoryText>
+            <StoryText>
                 <h4>Author Five Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='photo' />
-                </StoryText>
-                <StoryText>
+                {/* <img src='https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+            </StoryText>
+            <StoryText>
                 <h4>Author Five Profile</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
                 <h5>Location, Location</h5>
-                <img src='https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='photo' />
-                </StoryText>
-            </ScrollWrapper>
-      )
+                {/* <img src='https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+            </StoryText>
+        </ScrollWrapper>
+    )
 }
 
 const ScrollWrapper = styled.div `
-max-height:100vh;
-min-width:100vw;
-position:relative;
-overflow-y:scroll;
-overflow-x:hidden;
-scroll-snap-type:y mandatory;
-color:white;
-:-webkit-scrollbar {
-    display: none;
-}
-margin-top:-100px;
+    max-height:100vh;
+    min-width:100vw;
+    position:relative;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    scroll-snap-type:y mandatory;
+    color:white;
+    :-webkit-scrollbar {
+        display: none;
+    }
+    /* margin-top:-100px; */
 `
 
 const StoryText = styled.div `
-width:100%;
-height:100%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;    
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${authorTwo});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 5%;
+    
+    scroll-snap-align: center;
 
-img {
-min-width:100vw;
-height:100vh;
-scroll-snap-align:center;
-text-align:center;
-}
+    h4 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        cursor: pointer;
 
-h5,h4,p {
+        @media (max-width: 500px) {            
+            font-size: 1.5rem;
+        }
+    }
+
+    h5 {
+        font-size: .9rem;
+        cursor: pointer;
+
+        @media (max-width: 500px) {            
+            font-size: .8rem;
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        width: 50%;
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        @media (max-width: 1000px) {
+            width: 60%;
+        } 
+        @media (max-width: 800px) {
+            width: 70%;
+        } 
+        @media (max-width: 700px) {
+            width: 80%;
+        } 
+        @media (max-width: 600px) {
+            width: 90%;
+        } 
+        @media (max-width: 500px) {
+            width: 100%;
+            font-size: 1rem;
+        } 
+    }
+`
+
+// const StoryText = styled.div `
+//     width:100%;
+//     height:100%;   
+
+// img {
+//     min-width:100vw;
+//     height:100vh;
+//     scroll-snap-align:center;
+//     text-align:center;
+// }
+
+/* h5,h4,p {
     text-align:left;
     align-items:bottom;
     position:absolute;
@@ -103,31 +170,31 @@ h5 {
     font-size:15px;
     padding-top:20px;
     margin:400px 0 0 50px;
-}
+} */
 
-@media(max-width:800px) {
-    h4, p, h5 {
+// @media(max-width:800px) {
+//     h4, p, h5 {
         
-        width:90%;
-    }
+//         width:90%;
+//     }
 
-    h5 {
-        margin-top:220px;
-    }
-}
+//     h5 {
+//         margin-top:220px;
+//     }
+// }
 
-@media(max-width:400px) {
-     p {
+// @media(max-width:400px) {
+//      p {
         
-        width:60%;
-        margin-top:180px;
-    }
+//         width:60%;
+//         margin-top:180px;
+//     }
 
-    h5 {
-        margin-top:470px;
-    }
-}
-`
+//     h5 {
+//         margin-top:470px;
+//     }
+// }
+// `
 
 
 export default Authors;
