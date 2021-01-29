@@ -2,7 +2,7 @@
 
 
 
-const contactRouter = require("./contact/contact");
+const contactRouter = require("./contact/tellYourStoryForm");
 const preOrderRouter = require("./preOrder/preOrder");
 const subscribeRouter=require('./subscribe/subscribe')
 const express = require("express");
@@ -64,7 +64,4 @@ const configureRoutes = require("./payment/routes");
 configureServer(app);
 configureRoutes(app);
 
-app.listen(SERVER_CONFIGS.PORT, (error) => {
-  if (error) throw error;
-  console.log("Server running on port: " + SERVER_CONFIGS.PORT);
-});
+

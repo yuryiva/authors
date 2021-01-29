@@ -1,6 +1,7 @@
 import React from "react";
-import ContactForm from "../contactForm/ContactForm";
+import TellYourStoryForm from "../tellYourStoryForm/TellYourStoryForm";
 import PreOrderForm from "../preOrderForm/PreOrderForm";
+import GetInTouchForm from "../getInTouchForm/GetInTouchForm";
 
 
 
@@ -9,7 +10,9 @@ export default function ShortStories() {
     <div>
       <h3>This is the Short stories page</h3>
       <hr />
-      <ContactForm />
+      <TellYourStoryForm />
+<hr/>
+<GetInTouchForm />
       <hr/>
       
       <PreOrderForm />
