@@ -16,9 +16,23 @@ const StoriesShortcut = () => {
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words</p>
                 </StoryText>
                 <StoryImgLinks>
-                    <img data-aos='fade-up' src='https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
-                    <ImgWrapper1><img data-aos='fade-up' data-aos-duration="3000" src='https://images.unsplash.com/photo-1610916975200-6d28742d4dd6?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3M3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' /></ImgWrapper1>
-                    <ImgWrapper2><img data-aos='fade-up' data-aos-duration="3000" src='https://images.unsplash.com/photo-1610801264293-588a3b6c3446?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjV8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' /></ImgWrapper2>
+                    <img data-aos='fade-up' src='https://images.unsplash.com/photo-1509305717900-84f40e786d82?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjJ8fHBvcnRyYWl0fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    <ImgWrapper1>
+                        <img 
+                            data-aos='fade-up' 
+                            data-aos-duration="3000" 
+                            src='https://images.unsplash.com/photo-1610916975200-6d28742d4dd6?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3M3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' 
+                            alt='portrait' 
+                        />
+                    </ImgWrapper1>
+                    <ImgWrapper2>
+                        <img 
+                            data-aos='fade-up' 
+                            data-aos-duration="3000" 
+                            src='https://images.unsplash.com/photo-1610801264293-588a3b6c3446?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjV8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' 
+                            alt='portrait' 
+                        />
+                    </ImgWrapper2>
                 </StoryImgLinks>
             </StoryWrapper>
       )

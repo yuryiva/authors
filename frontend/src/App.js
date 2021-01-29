@@ -10,17 +10,19 @@ import Podcasts from "./components/podcasts/Podcasts";
 import ShortStories from "./components/shortStories/ShortStories";
 import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 import BurgerMenu from "./components/header/BurgerMenu";
-// import Checkout from "./components/payment/Checkout";
+import Banner from "./components/banner/Banner";
+import Checkout from "./components/payment/Checkout";
 import PreOrderForm from "./components/preOrderForm/PreOrderForm";
 import AuthorsStory from "./components/authorsPage/AuthorsStory";
 
 const App = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);  
 
   return (
     <div>
       <BurgerMenu open={open} setOpen={setOpen} />
       <Header open={open} setOpen={setOpen} />
+      <Banner />
 
       <Switch>
         <Route exact path="/" render={(props) => <LandingPage {...props} />} />
