@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+//import hook for useContext
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+import { Context } from "../../context/Context";
+import Checkout from "../payment/Checkout";
 
 const PreOrderForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
   const [amountOfBooks, setAmountOfBooks] = useState(0);
 
+  //storing context in variable that I named context, to have access to everyhing
+  const context = useContext(Context);
+  console.log(context);
   const bookPrice = 25;
 
   const handleChange = (event) => {
@@ -22,6 +28,7 @@ const PreOrderForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setStatus("Sending...");
     const {
       amount,
@@ -49,18 +56,20 @@ const PreOrderForm = () => {
       message: message.value,
       totalOrder: totalOrder,
     };
+    context.getDataFromForm(details);
+
     // details['totalOrder'] = totalOrder;
 
-    let response = await fetch(`http://localhost:8080/preorder`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    setSentMessage(result.status);
+    // let response = await fetch(`http://localhost:8080/preorder`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json;charset=utf-8",
+    //   },
+    //   body: JSON.stringify(details),
+    // });
+    // setStatus("Submit");
+    // let result = await response.json();
+    // setSentMessage(result.status);
   };
   return (
     <SendMessageWrapper>
@@ -89,7 +98,9 @@ const PreOrderForm = () => {
               required
             />
           </div>
-          <div>TOTAL EUR: {totalOrder}</div>
+
+          <h5>TOTAL EUR: {totalOrder}</h5>
+
           <div>
             <label htmlFor="name">Full name:</label>
             <input type="text" id="name" required />
@@ -126,7 +137,14 @@ const PreOrderForm = () => {
             <label htmlFor="message">Additional info:</label>
             <textarea id="message" />
           </div>
-          <button type="submit">{status}</button>
+          <SubmitDiv>
+            <button type="submit">{status}</button>
+          </SubmitDiv>
+          <Checkout
+            name={"Authors LLC."}
+            description={"Book(s) you bought"}
+            amount={4.99}
+          />
         </SentMessageForm>
       )}
     </SendMessageWrapper>
@@ -136,24 +154,26 @@ const PreOrderForm = () => {
 export default PreOrderForm;
 
 const SendMessageWrapper = styled.div`
-  width: 40%;
-  height: 40%;
+  width: 60%;
+  //height: 40%;
+  text-align: center;
   display: flex;
   flex-direction: row;
-  text-align: center;
   justify-content: center;
+  // margin: 20px;
+
   margin: auto;
 
-  padding: 20px;
+  padding: 10px;
 
-  border: 2px solid gray;
+  border: 1px lightgray solid;
   button {
     border-radius: 5px;
-    width: 20%;
+    width: 35%;
     height: 40px;
     text-align: center;
     background-color: white;
-    border: 2px solid grey;
+    border: 1px lightgray solid;
     font-size: 20px;
     color: grey;
     outline: none;
@@ -166,21 +186,36 @@ const SendMessageWrapper = styled.div`
 `;
 
 const SentMessageForm = styled.form`
-  text-align: center;
-
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  label {
+    width: 40%; m,
+    margin-right: 30px;
+    text-align: right;
+    align-items: bottom;
+  }
+  textarea {
+    height: 100px;
+    width: 100%;
+    margin-top: 10px;
+  }
   h5 {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   div {
-    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    // justify-content: right;
+    flex-wrap: no wrap;
   }
   input {
-    width: 90%;
-    height: 20px;
+    width: 100%;
+    height: 30px;
     border: 0;
     border-bottom: 1px solid black;
-    // background-color: lightgray;
-    margin: 20px 0;
+    margin: 10px 0;
     text-decoration: 0;
     outline: none;
     cursor: pointer;
@@ -191,7 +226,12 @@ const SentMessageForm = styled.form`
     background-color: rgba(192, 192, 192, 0.3);
   }
 `;
-
+// const PriceTotal = styled.div`
+//   width: 100%;
+//   display: flex;
+//   justify-content: center;
+//   text-align: center;
+// `;
 const ResponseDiv = styled.div`
   height: 80%;
   button {
@@ -199,7 +239,7 @@ const ResponseDiv = styled.div`
     width: 50%;
   }
 `;
-
-// const SendMessageButton = styled.button`
-// font-size: ${({ Initial }) => Initial ? '50px': '20px'}
-// `;
+const SubmitDiv = styled.div`
+  display: flex;
+  justify-content: center;
+`;
