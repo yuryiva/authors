@@ -38,8 +38,8 @@ const Checkout = ({ name, description, amount }) => {
   const fromDollarToCent = (amount) => parseInt(amount * 100);
 
   const successPayment = async (data) => {
-    console.log(data);
-    //send email here stored in context for all form data. context.nameofmethod
+    // console.log(data);
+    //send email here stored in context for all form data.
 
     let response = await fetch(`http://localhost:8080/preorder`, {
       method: "POST",
@@ -48,9 +48,6 @@ const Checkout = ({ name, description, amount }) => {
       },
       body: JSON.stringify(context.state),
     });
-    // setStatus("Submit");
-    // let result = await response.json();
-    // setSentMessage(result.status);
 
     alert("Payment Successful");
   };

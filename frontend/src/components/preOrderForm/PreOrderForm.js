@@ -9,7 +9,7 @@ const PreOrderForm = () => {
   const [sentMessage, setSentMessage] = useState(false);
   const [amountOfBooks, setAmountOfBooks] = useState(0);
 
-  //storing context in variable that i named context, have access to everyhing
+  //storing context in variable that I named context, to have access to everyhing
   const context = useContext(Context);
   console.log(context);
   const bookPrice = 25;
@@ -42,7 +42,6 @@ const PreOrderForm = () => {
       postcode,
       message,
     } = e.target.elements;
-    //console.log here from context...
 
     let details = {
       amount: amount.value,
@@ -244,7 +243,3 @@ const SubmitDiv = styled.div`
   display: flex;
   justify-content: center;
 `;
-
-// const SendMessageButton = styled.button`
-// font-size: ${({ Initial }) => Initial ? '50px': '20px'}
-// `;
