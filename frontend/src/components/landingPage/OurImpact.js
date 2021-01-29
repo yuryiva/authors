@@ -19,7 +19,7 @@ export default function OurImpact() {
             </MainHeading>
             <OurImpactSection>
                 <OurImpactDescription>
-                    <h4>Our Impact</h4>
+                    <h4>How we work</h4>
                     <p>Contrary to popular belief, Lorem Ipsum is not simply 
                         random text. It has roots in a piece of classical Latin 
                         literature from 45 BC, making it over 2000 years old. 
@@ -35,7 +35,7 @@ export default function OurImpact() {
 
             <OurValuesSection>
                 <OurValuesDescription>
-                    <h4>Our Values</h4>
+                    <h4>Tell your story</h4>
                     <p>Contrary to popular belief, Lorem Ipsum is not simply 
                         random text. It has roots in a piece of classical Latin 
                         literature from 45 BC, making it over 2000 years old. 
