@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-// import { Progress } from "reactstrap";
+import { Progress } from "reactstrap";
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import styled from "styled-components";
 import axios from "axios";
 
@@ -131,11 +132,15 @@ const ContactForm = () => {
               multiple // for multiple files upload
               onChange={onChangeHandler}
             />
-            {/* <div className="form-group">
-              <Progress max="100" color="success" value={stateOfLoading}>
+
+            <Pr>
+              {/* <Progress max="100" value={stateOfLoading}>
                 {Math.round(stateOfLoading, 2)}%
-              </Progress>
-            </div> */}
+              </Progress> */}
+              <ProgressBar  variant='success' now={60}>
+              {Math.round(stateOfLoading, 2)}%
+              </ProgressBar>
+            </Pr>
             <button type="button" onClick={onClickHandler}>
               {uploadButton}
             </button>
@@ -154,6 +159,11 @@ const ContactForm = () => {
 
 export default ContactForm;
 
+const Pr = styled.div`
+height: 20px;
+background-color: yellow;
+text-align: center;
+`
 const SendMessageForm = styled.div`
   width: 50%;
   height: 30%;
