@@ -10,13 +10,10 @@ import Podcasts from "./components/podcasts/Podcasts";
 import ShortStories from "./components/shortStories/ShortStories";
 import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 import BurgerMenu from "./components/header/BurgerMenu";
-
 import Banner from "./components/banner/Banner";
-// import Checkout from "./components/payment/Checkout";
 import Checkout from "./components/payment/Checkout";
 import PreOrderForm from "./components/preOrderForm/PreOrderForm";
-import AuthorsStory from './components/authorsPage/AuthorsStory';
-
+import AuthorsStory from "./components/authorsPage/AuthorsStory";
 
 const App = () => {
   const [open, setOpen] = useState(false);  
@@ -36,9 +33,19 @@ const App = () => {
           render={(props) => <PreOrderForm {...props} />}
         />
         <Route path="/podcasts" render={(props) => <Podcasts {...props} />} />
-        <Route path="/shortStories" render={(props) => <ShortStories {...props} />} />
-        <Route path="/joinTheMovement" render={(props) => <JoinTheMovement {...props} />} />
-        <Route exact path="/AuthorsStory" render={(props) => <AuthorsStory {...props} />} />
+        <Route
+          path="/shortStories"
+          render={(props) => <ShortStories {...props} />}
+        />
+        <Route
+          path="/joinTheMovement"
+          render={(props) => <JoinTheMovement {...props} />}
+        />
+        <Route
+          exact
+          path="/AuthorsStory"
+          render={(props) => <AuthorsStory {...props} />}
+        />
 
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
