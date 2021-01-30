@@ -5,71 +5,74 @@ import { Context } from "../../context/Context";
 import Checkout from "../payment/Checkout";
 
 const PreOrderForm = () => {
-  const [status, setStatus] = useState("Submit");
+  const [status, setStatus] = useState("Pay With Card");
   const [sentMessage, setSentMessage] = useState(false);
-  const [amountOfBooks, setAmountOfBooks] = useState(0);
+  const [amount, setAmount] = useState(0);
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [phone, setPhone] = useState();
+  const [address, setAddress] = useState();
+  const [city, setCity] = useState();
+  const [country, setCountry] = useState();
+  const [usState, setUsState] = useState();
+  const [postcode, setPostcode] = useState();
+  const [message, setMessage] = useState();
 
   //storing context in variable that I named context, to have access to everyhing
   const context = useContext(Context);
   console.log(context);
-  const bookPrice = 25;
+  const bookPrice = 15.99;
 
-  const handleChange = (event) => {
-    const numberOfBooks = event.target.value;
-    setAmountOfBooks(numberOfBooks);
-  };
-
-  const totalOrder = bookPrice * amountOfBooks;
+  const totalOrder = bookPrice * amount;
 
   const handleAnotherOrder = () => {
     setSentMessage(false);
-    setAmountOfBooks(0);
+    setAmount(0);
   };
 
-  const handleSubmit = async (e) => {
+  const handleChange = async (e) => {
     e.preventDefault();
 
-    setStatus("Sending...");
-    const {
-      amount,
-      name,
-      email,
-      phone,
-      address,
-      city,
-      state,
-      country,
-      postcode,
-      message,
-    } = e.target.elements;
+    /* setStatus("Sending..."); */
+
+    e.target.id === "amount" && setAmount(e.target.value);
+    e.target.id === "name" && setName(e.target.value);
+    e.target.id === "email" && setEmail(e.target.value);
+    e.target.id === "phone" && setPhone(e.target.value);
+    e.target.id === "address" && setAddress(e.target.value);
+    e.target.id === "city" && setCity(e.target.value);
+    e.target.id === "state" && setUsState(e.target.value);
+    e.target.id === "country" && setCountry(e.target.value);
+    e.target.id === "postcode" && setPostcode(e.target.value);
+    e.target.id === "message" && setMessage(e.target.value);
 
     let details = {
-      amount: amount.value,
-      name: name.value,
-      email: email.value,
-      phone: phone.value,
-      address: address.value,
-      city: city.value,
-      state: state.value,
-      country: country.value,
-      postcode: postcode.value,
-      message: message.value,
+      amount: amount,
+      name: name,
+      email: email,
+      phone: phone,
+      address: address,
+      city: city,
+      state: usState,
+      country: country,
+      postcode: postcode,
+      message: message,
       totalOrder: totalOrder,
     };
+
     context.getDataFromForm(details);
+    /* details["totalOrder"] = totalOrder;  */
 
-    // details['totalOrder'] = totalOrder;
-
-    // let response = await fetch(`http://localhost:8080/preorder`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json;charset=utf-8",
-    //   },
-    //   body: JSON.stringify(details),
-    // });
-    // setStatus("Submit");
-    // let result = await response.json();
-    // setSentMessage(result.status);
+    /* let response = await fetch(`http://localhost:8080/preorder`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify(details),
+    });
+    setStatus("Submit");
+    let result = await response.json();
+    setSentMessage(result.status); */
   };
   return (
     <SendMessageWrapper>
@@ -86,17 +89,12 @@ const PreOrderForm = () => {
           </button>
         </ResponseDiv>
       ) : (
-        <SentMessageForm onSubmit={handleSubmit}>
+        <SentMessageForm onChange={handleChange}>
           <h5>PRICE PER BOOK: {bookPrice} EUR</h5>
           <div>
             <label htmlFor="amount">Amount of books</label>
-            <input
-              onChange={handleChange}
-              type="number"
-              id="amount"
-              min="0"
-              required
-            />
+            {/* need to fix burgermenu component */}
+            <input style={{zIndex:999}} type="number" id="amount" min="0" required />
           </div>
 
           <h5>TOTAL EUR: {totalOrder}</h5>
@@ -137,16 +135,24 @@ const PreOrderForm = () => {
             <label htmlFor="message">Additional info:</label>
             <textarea id="message" />
           </div>
-          <SubmitDiv>
+          {/* send email button */}
+          {/* <SubmitDiv>
             <button type="submit">{status}</button>
-          </SubmitDiv>
-          <Checkout
+          </SubmitDiv> */}
+          {/* checkout button */}
+          {/* <Checkout
             name={"Authors LLC."}
             description={"Book(s) you bought"}
-            amount={4.99}
-          />
+            amount={context.state.totalOrder}
+          /> */}
         </SentMessageForm>
       )}
+      <Checkout
+        name={"Authors LLC."}
+        description={"Book(s) you bought"}
+        amount={context.state.totalOrder}
+        label={status}
+      />
     </SendMessageWrapper>
   );
 };
@@ -158,7 +164,8 @@ const SendMessageWrapper = styled.div`
   //height: 40%;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   // margin: 20px;
 

@@ -17,7 +17,7 @@ import PreOrderForm from "./components/preOrderForm/PreOrderForm";
 import AuthorsStory from "./components/authorsPage/AuthorsStory";
 
 const App = () => {
-  const [open, setOpen] = useState(false);  
+  const [open, setOpen] = useState(false);
 
   return (
     <div>
@@ -51,11 +51,11 @@ const App = () => {
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
-      <Checkout
+      {/* <Checkout
         name={"Authors LLC."}
         description={"Book(s) you bought"}
         amount={4.99}
-      />
+      /> */}
 
       <Footer />
     </div>

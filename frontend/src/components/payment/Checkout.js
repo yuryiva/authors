@@ -6,50 +6,33 @@ import { Context } from "../../context/Context";
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
 
-// const CURRENCY = "EUR";
-
-// const fromDollarToCent = (amount) => parseInt(amount * 100);
-
-// const successPayment = (data) => {
-//   console.log(data);
-//   //send email here stored in context for all form data. context.nameofmethod
-//   alert("Payment Successful");
-// };
-
-// const errorPayment = (data) => {
-//   alert("Payment Error");
-// };
-
-// const onToken = (amount, description) => (token) =>
-//   axios
-//     .post(PAYMENT_SERVER_URL, {
-//       description,
-//       source: token.id,
-//       currency: CURRENCY,
-//       amount: fromDollarToCent(amount),
-//     })
-//     .then(successPayment)
-//     .catch(errorPayment);
-
-const Checkout = ({ name, description, amount }) => {
+const Checkout = ({ name, description, amount, label, type }) => {
   const context = useContext(Context);
   const CURRENCY = "EUR";
 
   const fromDollarToCent = (amount) => parseInt(amount * 100);
 
   const successPayment = async (data) => {
-    // console.log(data);
-    //send email here stored in context for all form data.
-
-    let response = await fetch(`http://localhost:8080/preorder`, {
+    alert("Payment Successful");
+    fetch(`http://localhost:8080/preorder`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(context.state),
+      body: JSON.stringify({
+        amount: context.state.amount,
+        name: context.state.name,
+        email: context.state.email,
+        phone: context.state.phone,
+        address: context.state.address,
+        city: context.state.city,
+        state: context.state.state,
+        country: context.state.country,
+        postcode: context.state.postcode,
+        message: context.state.message,
+        totalOrder: context.state.totalOrder,
+      }),
     });
-
-    alert("Payment Successful");
   };
 
   const errorPayment = (data) => {
@@ -70,8 +53,10 @@ const Checkout = ({ name, description, amount }) => {
   return (
     <StripeCheckout
       name={name}
+      type={type}
+      label={label}
       description={description}
-      amount={fromDollarToCent(context.state.totalOrder)}
+      amount={fromDollarToCent(amount)}
       token={onToken(amount, description)}
       currency={CURRENCY}
       stripeKey={
