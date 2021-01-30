@@ -1,0 +1,12 @@
+///THIS FILE IS ENTRY POINT
+const app = require("./app");
+const dotenv = require("dotenv");
+const port = process.env.port || 6000;
+
+dotenv.config();
+app.listen(port, (error) => {
+  if (error) {
+    console.log(`SOMETHING WENT WRONG - ${error.message}`);
+  }
+  console.log(`SERVER IS RUNNING ON PORT ${port}`);
+});
