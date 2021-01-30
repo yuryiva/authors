@@ -14,6 +14,25 @@ const Checkout = ({ name, description, amount, label, type }) => {
 
   const successPayment = async (data) => {
     alert("Payment Successful");
+    fetch(`http://localhost:8080/preorder`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        amount: context.state.amount,
+        name: context.state.name,
+        email: context.state.email,
+        phone: context.state.phone,
+        address: context.state.address,
+        city: context.state.city,
+        state: context.state.usState,
+        country: context.state.country,
+        postcode: context.state.postcode,
+        message: context.state.message,
+        totalOrder: context.state.totalOrder,
+      }),
+    });
   };
 
   const errorPayment = (data) => {
