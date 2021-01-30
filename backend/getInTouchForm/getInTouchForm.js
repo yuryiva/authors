@@ -22,28 +22,16 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/contact", (req, res) => {
-  const imageName = req.body.imageName;
-  console.log(imageName);
+router.post("/get-in-touch", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
   const topic = req.body.topicChosen;
 
-  const attachments = imageName
-    ? [
-        {
-          filename: imageName,
-          path: `./contact/${imageName}`,
-        },
-      ]
-    : "";
-
   const mail = {
     from: name,
     to: userEmail,
-    subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
-    attachments: attachments,
+    subject: "GET IN TOUCH FORM SUBMISSION FROM AUTHORS!",
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
     <h2>Subject of the message:<h1>${topic}</h1></h2>
     <h2>Email to contact: <h1>${email}</h1></h2>
