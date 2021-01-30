@@ -2,18 +2,12 @@ const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
 const ck = require("ckey");
-const delFiles = require('./delFiles')
+const delFiles = require("./delFiles");
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
 
 
-// const rimraf = require("rimraf");
-
-// const path = require("path");
-
-// const fs = require("fs");
-
-// const uploadsDir = __dirname + "/uploads/"; 
+const uploadsDir = __dirname + "/uploads/";
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
@@ -31,19 +25,19 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/contact", (req, res) => {
+router.post("/tell-your-story", (req, res) => {
   const imageName = req.body.imageName;
   console.log(imageName);
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-  const topic = req.body.topicChosen;
+  const topic = req.body.topic;
 
   const attachments = imageName
     ? [
         {
           filename: imageName,
-          path: `./contact/uploads/${imageName}`,
+          path: `./tellYourStoryForm/uploads/${imageName}`,
         },
       ]
     : "";
@@ -51,7 +45,7 @@ router.post("/contact", (req, res) => {
   const mail = {
     from: name,
     to: userEmail,
-    subject: "CONTACT FORM SUBMISSION FROM AUTHORS!",
+    subject: "TELL YOUR STORY FORM SUBMISSION FROM AUTHORS!",
     attachments: attachments,
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
     <h2>Subject of the message:<h1>${topic}</h1></h2>
@@ -64,32 +58,9 @@ router.post("/contact", (req, res) => {
     if (error) {
       res.json({ status: "ERROR" });
     } else {
-      res.json({ status: "SENT" })
-      .then(
-        delFiles
-        //  fs.readdir(uploadsDir, function (err, files) {
-        //   files.forEach(function (file, index) {
-        //     fs.stat(path.join(uploadsDir, file), function (err, stat) {
-        //       if (err) {
-        //         return console.error(err);
-        //       }
-        
-        //       setTimeout(() => {
-        //         return rimraf(path.join(uploadsDir, file), function (err) {
-        //           if (err) {
-        //             return console.error(err);
-        //           }
-        //           console.log("successfully deleted");
-        //         });
-        //       }, 3000);
-      
-        //     });
-        //   });
-        // }) 
-      )
+      res.json({ status: "SENT" }).then(delFiles());
     }
-    
-  })
+  });
 });
 
 module.exports = router;

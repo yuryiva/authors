@@ -2,17 +2,9 @@ const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
 const ck = require("ckey");
-const delFiles = require("./delFiles");
+
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
-
-const rimraf = require("rimraf");
-
-const path = require("path");
-
-const fs = require("fs");
-
-const uploadsDir = __dirname + "/uploads/";
 
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
@@ -30,28 +22,16 @@ contactEmail.verify((error) => {
   }
 });
 
-router.post("/tell-your-story", (req, res) => {
-  const imageName = req.body.imageName;
-  console.log(imageName);
+router.post("/get-in-touch", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const message = req.body.message;
-  const topic = req.body.topic;
-
-  const attachments = imageName
-    ? [
-        {
-          filename: imageName,
-          path: `./contact/uploads/${imageName}`,
-        },
-      ]
-    : "";
+  const topic = req.body.topicChosen;
 
   const mail = {
     from: name,
     to: userEmail,
-    subject: "TELL YOUR STORY FORM SUBMISSION FROM AUTHORS!",
-    attachments: attachments,
+    subject: "GET IN TOUCH FORM SUBMISSION FROM AUTHORS!",
     html: `<h2>Hello, Sara, Cristina! You have a message from: <h1>${name}</h1></h2>
     <h2>Subject of the message:<h1>${topic}</h1></h2>
     <h2>Email to contact: <h1>${email}</h1></h2>
@@ -63,7 +43,7 @@ router.post("/tell-your-story", (req, res) => {
     if (error) {
       res.json({ status: "ERROR" });
     } else {
-      res.json({ status: "SENT" }).then(delFiles());
+      res.json({ status: "SENT" });
     }
   });
 });

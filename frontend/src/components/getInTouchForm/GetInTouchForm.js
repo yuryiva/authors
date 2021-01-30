@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { nanoid } from "nanoid";
 
 const topics = ["Press", "Partnership", "Feedback", "Other"];
 
 const GetInTouchForm = () => {
   const [status, setStatus] = useState("Submit");
   const [sentMessage, setSentMessage] = useState(false);
-  const [topicChosen, setTopicChosen] = useState(topics[0]);
+  const [topicChosen, setTopicChosen] = useState("");
 
   const handleTopicChoice = (event) => {
     event.preventDefault();
@@ -25,7 +26,7 @@ const GetInTouchForm = () => {
       message: message.value,
       topicChosen,
     };
-    let response = await fetch("http://localhost:8080/contact", {
+    let response = await fetch("http://localhost:8080/get-in-touch", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -35,8 +36,7 @@ const GetInTouchForm = () => {
     setStatus("Submit");
     let result = await response.json();
     setSentMessage(result.status);
-    setTopicChosen(topics[0]);
-    
+    setTopicChosen("");
   };
   return (
     <SendMessageForm>
@@ -65,10 +65,10 @@ const GetInTouchForm = () => {
           </div>
           <div>
             <label htmlFor="topic">Topic </label>
-            <select onChange={handleTopicChoice}>
-              <option>--Pick an Option--</option>
-              {topics.map((element, index) => (
-                <option key={index} id="topic" required>
+            <select onChange={handleTopicChoice} required>
+              <option></option>
+              {topics.map((element) => (
+                <option key={nanoid()} id="topic">
                   {element}
                 </option>
               ))}
