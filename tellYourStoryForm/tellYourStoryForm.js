@@ -6,9 +6,6 @@ const delFiles = require("./delFiles");
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
 
-
-const uploadsDir = __dirname + "/uploads/";
-
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
   auth: {
