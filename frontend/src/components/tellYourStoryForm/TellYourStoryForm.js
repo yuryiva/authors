@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Progress } from "reactstrap";
-import ProgressBar from "react-bootstrap/ProgressBar";
+import { ProgressBar } from "react-bootstrap";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -20,31 +20,36 @@ const TellYourStoryForm = () => {
 
   const onClickHandler = () => {
     const data = new FormData();
-    console.log(filesToUpload);
-    // console.log(stateOfLoading);
-    for (let i = 0; i < filesToUpload.length; i++) {
-      data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
-      console.log(data);
-    }
-
-    axios
-      .post("http://localhost:8080/upload", data, {
-        onUploadProgress: (ProgressEvent) => {
-          setStateOfLoading((ProgressEvent.loaded / ProgressEvent.total) * 100);
-        },
-      })
-      .then(
-        (res) => {
-          console.log(res.statusText, "FILE UPLOADED");
-          console.log(res);
-          {
-            setUploadButton("Uploaded");
+    if (filesToUpload !== null) {
+      // console.log(filesToUpload);
+      // console.log(stateOfLoading);
+      for (let i = 0; i < filesToUpload.length; i++) {
+        data.append("file", filesToUpload[i]); /////????data.append("file", filesToUpload[i], filesToUpload[i].name);
+        console.log(data);
+      }
+      axios
+        .post("http://localhost:8080/upload", data, {
+          onUploadProgress: (ProgressEvent) => {
+            setStateOfLoading(
+              (ProgressEvent.loaded / ProgressEvent.total) * 100
+            );
+          },
+        })
+        .then(
+          (res) => {
+            console.log(res.statusText, "FILE UPLOADED");
+            console.log(res);
+            {
+              setUploadButton("Uploaded");
+            }
+          },
+          (error) => {
+            console.log(error, "FILE NOT UPLOADED");
           }
-        },
-        (error) => {
-          console.log(error, "FILE NOT UPLOADED");
-        }
-      );
+        );
+    } else {
+      alert("Please choose a file to upload");
+    }
   };
   ////////////////////
 
@@ -118,18 +123,14 @@ const TellYourStoryForm = () => {
             <input
               type="file"
               name="file"
-              multiple // for multiple files upload
+              // multiple- for multiple files upload
               onChange={onChangeHandler}
             />
 
-            {/* <Pr> */}
-            {/* <Progress max="100" value={stateOfLoading}>
-                {Math.round(stateOfLoading, 2)}%
-              </Progress> */}
-            <ProgressBar variant="success" now={60}>
-              {Math.round(stateOfLoading, 2)}%
+            <ProgressBar>
+              {stateOfLoading > 0 && Math.round(stateOfLoading, 2) + "%"}
             </ProgressBar>
-            {/* </Pr> */}
+
             <button type="button" onClick={onClickHandler}>
               {uploadButton}
             </button>
@@ -148,11 +149,6 @@ const TellYourStoryForm = () => {
 
 export default TellYourStoryForm;
 
-// const Pr = styled.div`
-// height: 20px;
-// background-color: yellow;
-// text-align: center;
-// `
 const SendMessageForm = styled.div`
   width: 50%;
   height: 30%;
@@ -160,7 +156,6 @@ const SendMessageForm = styled.div`
   flex-direction: column;
   text-align: center;
   background: lightblue;
-
   border: 2px solid black;
 `;
 
