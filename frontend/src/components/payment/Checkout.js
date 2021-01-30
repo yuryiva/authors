@@ -6,7 +6,7 @@ import { Context } from "../../context/Context";
 import STRIPE_PUBLISHABLE from "./constants/stripe";
 import PAYMENT_SERVER_URL from "./constants/server";
 
-const Checkout = ({ name, description, amount, label, type }) => {
+const Checkout = ({ name, description, amount, label, type, email }) => {
   const context = useContext(Context);
   const CURRENCY = "EUR";
 
@@ -63,7 +63,7 @@ const Checkout = ({ name, description, amount, label, type }) => {
         "pk_test_51IAcqYDle1Cl217pMufz4egXcGPGMG2Ooko3tiOqf60DtUEz7ujPSkDfPbmga6qvel7NbmK9S0o5rOtfj8pSsbWq00vW0qtt4U"
       }
       zipCode
-      email
+      email={email}
       allowRememberMe
     />
   );

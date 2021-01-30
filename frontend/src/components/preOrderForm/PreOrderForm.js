@@ -94,7 +94,13 @@ const PreOrderForm = () => {
           <div>
             <label htmlFor="amount">Amount of books</label>
             {/* need to fix burgermenu component */}
-            <input style={{zIndex:999}} type="number" id="amount" min="0" required />
+            <input
+              style={{ zIndex: 999 }}
+              type="number"
+              id="amount"
+              min="0"
+              required
+            />
           </div>
 
           <h5>TOTAL EUR: {totalOrder}</h5>
@@ -151,6 +157,7 @@ const PreOrderForm = () => {
         name={"Authors LLC."}
         description={"Book(s) you bought"}
         amount={context.state.totalOrder}
+        email={context.state.email}
         label={status}
       />
     </SendMessageWrapper>
