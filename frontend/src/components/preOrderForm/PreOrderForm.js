@@ -93,7 +93,8 @@ const PreOrderForm = () => {
           <h5>PRICE PER BOOK: {bookPrice} EUR</h5>
           <div>
             <label htmlFor="amount">Amount of books</label>
-            <input type="number" id="amount" min="0" required />
+            {/* need to fix burgermenu component */}
+            <input style={{zIndex:999}} type="number" id="amount" min="0" required />
           </div>
 
           <h5>TOTAL EUR: {totalOrder}</h5>
