@@ -16,7 +16,7 @@ import PreOrderForm from "./components/preOrderForm/PreOrderForm";
 import AuthorsStory from "./components/authorsPage/AuthorsStory";
 
 const App = () => {
-  const [open, setOpen] = useState(false);  
+  const [open, setOpen] = useState(false);
 
   return (
     <div>

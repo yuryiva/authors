@@ -5,14 +5,14 @@ import { Context } from "../../context/Context";
 import Checkout from "../payment/Checkout";
 
 const PreOrderForm = () => {
-  const [status, setStatus] = useState("Submit");
+  const [status, setStatus] = useState("Pay With Card");
   const [sentMessage, setSentMessage] = useState(false);
   const [amountOfBooks, setAmountOfBooks] = useState(0);
 
   //storing context in variable that I named context, to have access to everyhing
   const context = useContext(Context);
   console.log(context);
-  const bookPrice = 25;
+  const bookPrice = 15.99;
 
   const handleChange = (event) => {
     const numberOfBooks = event.target.value;
@@ -57,6 +57,10 @@ const PreOrderForm = () => {
       totalOrder: totalOrder,
     };
     context.getDataFromForm(details);
+
+    const paymentModal = () => {
+      console.log("I am clicking payment");
+    };
 
     // details['totalOrder'] = totalOrder;
 
@@ -143,7 +147,7 @@ const PreOrderForm = () => {
           <Checkout
             name={"Authors LLC."}
             description={"Book(s) you bought"}
-            amount={4.99}
+            amount={context.state.totalOrder}
           />
         </SentMessageForm>
       )}
