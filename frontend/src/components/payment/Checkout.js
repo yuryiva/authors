@@ -26,7 +26,7 @@ const Checkout = ({ name, description, amount, label, type }) => {
         phone: context.state.phone,
         address: context.state.address,
         city: context.state.city,
-        state: context.state.usState,
+        state: context.state.state,
         country: context.state.country,
         postcode: context.state.postcode,
         message: context.state.message,

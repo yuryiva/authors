@@ -51,11 +51,11 @@ const App = () => {
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>
       <hr />
-      <Checkout
+      {/* <Checkout
         name={"Authors LLC."}
         description={"Book(s) you bought"}
         amount={4.99}
-      />
+      /> */}
 
       <Footer />
     </div>
