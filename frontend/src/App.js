@@ -29,16 +29,16 @@ const App = () => {
 
       <Switch>
         <Route exact path="/" render={(props) => <LandingPage {...props} />} />
-        <Route path="/authorsPage" render={(props) => <Authors {...props} />} />
+        <Route path="/authors-page" render={(props) => <Authors {...props} />} />
         <Route path="/books" render={(props) => <Books {...props} />} />
         <Route
           path="/preOrderForm"
           render={(props) => <PreOrderForm {...props} />}
         />
         <Route path="/podcasts" render={(props) => <Podcasts {...props} />} />
-        <Route path="/shortStories" render={(props) => <ShortStories {...props} />} />
-        <Route path="/joinTheMovement" render={(props) => <JoinTheMovement {...props} />} />
-        <Route exact path="/AuthorsStory" render={(props) => <AuthorsStory {...props} />} />
+        <Route path="/short-stories" render={(props) => <ShortStories {...props} />} />
+        <Route path="/join-the-movement" render={(props) => <JoinTheMovement {...props} />} />
+        <Route exact path="/authorsStory" render={(props) => <AuthorsStory {...props} />} />
 
         {/* <Route path="/home" render={(props) => <MainSection {...props} />} /> */}
       </Switch>

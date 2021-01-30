@@ -29,7 +29,7 @@ const Header = ({ open, setOpen }) => {
             <LogoImage />
           </Link> */}
          
-            <Link to="/authorsPage" onClick={handleDropdown}>
+            <Link to="/authors-page" onClick={handleDropdown}>
               The Authors
             </Link>
      
@@ -41,11 +41,11 @@ const Header = ({ open, setOpen }) => {
               Podcast
             </Link>
         
-            <Link to="/shortStories" onClick={handleDropdown}>
+            <Link to="/short-stories" onClick={handleDropdown}>
               Short stories
             </Link>  
          
-            <Link to="/joinTheMovement" onClick={handleDropdown}>
+            <Link to="/join-the-movement" onClick={handleDropdown}>
               Join the movement
             </Link>                
 
