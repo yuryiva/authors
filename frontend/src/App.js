@@ -12,7 +12,7 @@ import JoinTheMovement from "./components/joinTheMovement/JoinTheMovement";
 import BurgerMenu from "./components/header/BurgerMenu";
 
 // import Banner from "./components/banner/Banner";
-import Checkout from "./components/payment/Checkout";
+// import Checkout from "./components/payment/Checkout";
 import PreOrderForm from "./components/preOrderForm/PreOrderForm";
 import AuthorsStory from "./components/authorsPage/AuthorsStory";
 
