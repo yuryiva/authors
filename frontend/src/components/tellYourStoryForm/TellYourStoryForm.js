@@ -157,6 +157,7 @@ const SendMessageForm = styled.div`
   text-align: center;
   background: lightblue;
   border: 2px solid black;
+  margin-top: 150px;
 `;
 
 // const SendMessageButton = styled.button`
