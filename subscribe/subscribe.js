@@ -6,6 +6,41 @@ const ck = require("ckey");
 const userEmail = ck.EMAIL;
 const userPassword = ck.PASSWORD;
 
+// async function myCustomMethod(ctx){
+//   let cmd = await ctx.sendCommand(
+//       'AUTH PLAIN ' +
+//           Buffer.from(
+//               '\u0000' + ctx.auth.credentials.user + '\u0000' + ctx.auth.credentials.pass,
+//               'utf-8'
+//           ).toString('base64')
+//   );
+
+//   if(cmd.status < 200 || cmd.status >=300){
+//       throw new Error('Failed to authenticate user: ' + cmd.text);
+//   }
+// }
+
+
+// const contactEmail = nodemailer.createTransport({
+//   host: 'smtp.mail.yahoo.com',
+//   port: 587,
+//   service:'yahoo',
+//   secure: false,
+  
+//   auth: {
+//     // type: 'custom',
+//     // method: 'MY-CUSTOM-METHOD',
+//     user: userEmail,
+//     pass: userPassword,
+//   },
+//   // customAuth:{
+//   //   'MY-CUSTOM-METHOD': myCustomMethod
+//   // }
+//   debug: false,
+//             logger: true 
+// });
+
+
 const contactEmail = nodemailer.createTransport({
   service: "gmail",
   auth: {
