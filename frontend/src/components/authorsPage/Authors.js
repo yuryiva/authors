@@ -6,36 +6,42 @@ import styled from 'styled-components';
 
 const authors = [
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80',
         authorProfile: 'Author One Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         authorLocation: 'Location, Location'
     },
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1473040767970-c16f84cc4c05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
         authorProfile: 'Author Two Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         authorLocation: 'Location, Location'
     },
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1585771742132-7d18efffe607?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
         authorProfile: 'Author Three Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         authorLocation: 'Location, Location'
     },
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1587262538177-842ad13e290c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
         authorProfile: 'Author Four Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         authorLocation: 'Location, Location'
     },
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80',
         authorProfile: 'Author Five Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         authorLocation: 'Location, Location'
     },
     {
+        authorId: Math.random(),
         authorUrl: 'https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80',
         authorProfile: 'Author Six Profile',
         description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
@@ -48,12 +54,12 @@ const Authors = () => {
     return (
         <ScrollWrapper>
             {
-                authors.map((author, index) => (
-                    <StoryText key={ index }>
+                authors.map(author => (
+                    <StoryText key={ author.authorId }>
                         <h4>{ author.authorProfile }</h4>
                         <p>{ author.description }</p>
                         <h5>{ author.authorLocation }</h5>
-                        {/* <img src='https://images.unsplash.com/photo-1447069387593-a5de0862481e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80' alt='author-profile' /> */}
+                        <img src={ author.authorUrl } alt='author-profile' />
                     </StoryText>
                 ))
             }              
@@ -79,7 +85,8 @@ const StoryText = styled.div `
     width: 100vw;
     height: 100vh;
     position: relative;    
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${authors.map(author => author.url)});
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url(${ authors[0].authorUrl }); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5));
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -87,9 +94,19 @@ const StoryText = styled.div `
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    padding: 0 5%;
+    padding: 0 5%;    
     
     scroll-snap-align: center;
+
+    img {
+        position: absolute;
+        top: 0;
+        /* left: 0; */
+        align-self: center;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;       
+    }
 
     h4 {
         font-size: 2.2rem;
