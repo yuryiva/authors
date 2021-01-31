@@ -1,6 +1,7 @@
 ///THIS FILE IS ENTRY POINT
 const app = require("./app");
 const dotenv = require("dotenv");
+dotenv.config();
 const port = process.env.port || 6000;
 
 dotenv.config();
