@@ -71,6 +71,7 @@ const InstaImgLinks1 = styled.div`
     margin: 0;
     /* width:auto; */
     width: 100%;
+    overflow: hidden;
 
 /* @media (max-width:650px) {
     overflow-x:scroll;
@@ -99,7 +100,7 @@ const InstaImgLinks1 = styled.div`
 `
 
 const ImgWrapper = styled.div `
-    /* margin: 20px; */
+    margin: 50px 10px;
     width:300px;
     height:380px;
     display: inline-block;
@@ -123,10 +124,10 @@ const ImgWrapper = styled.div `
         
     }
 
-    @media (max-width:650px) {
-    /* display:none; */
-    width:100%;
-}
+    /* @media (max-width:650px) {
+        display:none;
+        width:100%;
+    } */
 `
 
 // const ImgWrapper1 = styled.div`
@@ -156,7 +157,8 @@ const InstaText = styled.div `
     /* flex-direction:row; */
     /* justify-content:center; */
     justify-content: space-between;
-    margin-bottom:30px;
+    /* margin: 0 10px; */
+    margin-bottom:30px;    
     width:100%;
 `
 
@@ -165,6 +167,7 @@ const InstaContact = styled.div `
     flex-direction:column;
     justify-content:left;
     text-align:left;
+    margin-left: 10px;
 
     h4 {
         font-weight:400;
@@ -183,7 +186,8 @@ button {
     width:130px;
     height:40px;
     border-radius:2px;
-    margin-left:50px;
+    /* margin-left:50px; */
+    margin-right: 10px;
     border:1px solid black;
     background-color:white;
     cursor: pointer;

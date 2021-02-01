@@ -12,7 +12,3 @@
     font-family: 'Space Mono', monospace;    
 }
 
-#root > div > div:nth-child(3) {
-    width: 100vw;
-}
-
