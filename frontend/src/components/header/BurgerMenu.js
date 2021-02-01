@@ -75,7 +75,7 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 999;
-  color: #000;
+  /* color: #000; */
 
   &:focus {
     outline: none;
@@ -87,9 +87,7 @@ const StyledBurger = styled.button`
 
   div {    
     width: 2rem;
-    height: 0.25rem;
-    /* background: ${({ open }) => open ? '#000' : '#fff'}; */
-    /* background: #000; */
+    height: 0.25rem;    
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
