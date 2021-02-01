@@ -64,6 +64,7 @@ const Authors = () => {
             {
                 authors.map(author => (
                     <StoryText key={ author.authorId }>
+                        {console.log(author.authorId)}
                         <h4>{ author.authorProfile }</h4>
                         <p>{ author.description }</p>
                         <h5>{ author.authorLocation }</h5>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import ourImpactPhoto from '../../assets/photo1.jpg';
 import ourValuesPhoto from '../../assets/photo7.jpg';
 
