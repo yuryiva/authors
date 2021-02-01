@@ -1,8 +1,15 @@
+
 // import React, {Route, Switch, useEffect} from 'react';
 import styled from 'styled-components';
 // import Footer from './components/Footer/Footer';
-<style>@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');</style>;
-<style>@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');</style>
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+</style>;
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
+</style>;
 
 const authors = [
     {
@@ -50,6 +57,7 @@ const authors = [
 ];
 
 const Authors = () => {
+
 
     return (
         <ScrollWrapper>
@@ -218,6 +226,7 @@ h5 {
 //     }
 // }
 // `
+
 
 
 export default Authors;

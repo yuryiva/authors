@@ -13,13 +13,13 @@ export default function Books() {
   // const handlePreOrderToggle = () => {
   //   togglePreOrder(!showPreOrder);
   // };
-
+  const bookPrice = 15.99;
   return (
     <PageWrapper>
       <BookWrapper>
         <BookImg>
           <img
-            src="https://imagessl7.casadellibro.com/a/l/t5/27/9788423357727.jpg"
+            src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQYFM7A8Fn0G23_-MxQ4kzKkxsR3qUh7Gv-wYYjgSB8oYugldi_"
             alt="book"
           />
         </BookImg>
@@ -28,23 +28,24 @@ export default function Books() {
           <h3>Stories of Hope</h3>
 
           <p>
-            Lorem Ipsum es simplemente el texto de relleno de las imprentas y
-            archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar
-            de las industrias desde el año 1500, cuando un impresor (N. del T.
-            persona que se dedica a la imprenta) desconocido usó una galería de
-            textos y los mezcló de tal manera que logró hacer un libro de textos
-            especimen. No sólo sobrevivió 500 años, sino que tambien ingresó
-            como texto de relleno en documentos electrónicos, quedando
-            esencialmente igual al original. Fue popularizado en los 60s con la
-            creación de las hojas "Letraset", las cuales contenian pasajes de
-            Lorem Ipsum, y más recientemente con software de autoedición, como
-            por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem
-            Ipsum.
+            Heather Morris's extraordinary talents as a listener led Lale
+            Sokolov to entrust her with his story - which she told as the
+            bestselling novel THE TATTOOIST OF AUSCHWITZ and its follow-up,
+            CILKA'S JOURNEY. Now she shares her inspiring voyage through
+            writing, exploring how she learned to really listen to the stories
+            people told her, some of which she has shared with millions of
+            readers in her fiction. An inspiring manual for life, STORIES OF
+            HOPE examines and explores Heather's extraordinary writing journey
+            in the form of a series of tales of the remarkable people she has
+            met, the incredible stories they have shared with her, and the
+            lessons they hold for us all.
           </p>
         </BookDescription>
         <BookCheckOut>
-          <h3>$13.99</h3>
-          <p>By Crisina and Sara | January 22, 2021</p>
+          <h3>
+            €<span>{bookPrice}</span>
+          </h3>
+          <p>By Heather Morris | January 22, 2021</p>
           <p>Paperback</p>
           <p>Category: Mystery</p>
           <p>Delivery in 2-5 working days.</p>
@@ -111,11 +112,12 @@ const BookDescription = styled.div`
   }
 `;
 const BookCheckOut = styled.div`
-  height: 450px;
+  height: 470px;
   display: flex;
   flex-direction: column;
   padding: 0 20px;
   margin: 40px;
+
   text-align: left;
   width: 350px;
   button {
@@ -128,7 +130,7 @@ const BookCheckOut = styled.div`
     font-size: 20px;
     color: rgb(33, 105, 219);
     outline: none;
-    margin-top: 20px 20px;
+    // margin-top: 20px 20px;
   }
   button:hover {
     background-color: rgb(33, 105, 219);
