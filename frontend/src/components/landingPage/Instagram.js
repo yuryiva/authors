@@ -59,6 +59,32 @@ const InstaWrapper = styled.div`
     margin: 0;    
     /* margin: 0 5%;     */
     margin-bottom:100px;
+
+    @media (max-width: 1599px) {
+        padding: 0 25%;
+    }
+    @media (max-width: 1400px) {
+        padding: 0 22%;
+    }
+    @media (max-width: 1199px) {
+        padding: 0 20%;
+    }
+    @media (max-width: 1100px) {
+        padding: 0 17%;
+    }
+    @media (max-width: 1000px) {
+        padding: 0 14%;
+    }
+    @media (max-width: 900px) {
+        padding: 0 10%;
+    }
+    @media (max-width: 800px) {
+        padding: 0 5%;
+    }
+    @media (max-width: 720px) {
+        padding: 0 10%;
+        justify-content: center;
+    }
     
 `
 
