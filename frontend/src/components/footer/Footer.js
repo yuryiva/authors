@@ -92,24 +92,51 @@ const FooterLinks = styled.div`
     width: auto;
     padding-left: 0;
   }
+
+  @media (max-width: 850px) {
+    margin-bottom:40px;
+
+    p {
+      font-weight:100;
+      color:rgb (92, 92, 92);
+    }
+  }
 `;
 
 const AboutUs = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+
+  @media (max-width: 850px) {
+    margin:0 10px;
+    margin-bottom:20px;
+
+    
+  }
 `;
 
 const OurWork = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  @media (max-width: 850px) {
+    margin:0 10px;
+    margin-bottom:20px;
+
+    
+  }
 `;
 
 const ContactUs = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
+  @media (max-width: 850px) {
+    margin:0 10px;
+
+    
+  }
 `;
 
 const Subscribe = styled.div`
