@@ -55,7 +55,8 @@ const BurgerMenu = ({ open, setOpen }) => {
 const BurgerContainer = styled.div`   
   /* background: ${() => window.scrollY >= 727 ? '#fff' : 'transparent'};   */
   position: fixed;
-  width: 100vw;
+  /* width: 100vw; */
+  width: 100%;
   height: 100px;
   display: flex; 
   justify-content: center;

@@ -64,8 +64,8 @@ const InstaWrapper = styled.div`
     text-align:center;
     align-items:center;    
     font-family: 'Space Mono', monospace;
-    /* width:100%;     */
-    width:100vw; 
+    width:100%;    
+    /* width:100vw;  */
     padding: 0 10%;   
     margin: 0;    
     /* margin: 0 5%;     */

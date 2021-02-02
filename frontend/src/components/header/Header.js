@@ -66,7 +66,8 @@ const NavigationMenu = styled.nav`
   align-items: center;  
   background: #fff;
   transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};  
-  height: 100vh;     
+  /* height: 100vh;      */
+  height: 100%;     
   width: 100vw;
   text-align: left;
   padding: 2rem;    
