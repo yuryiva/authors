@@ -5,6 +5,7 @@ import Carousel from "react-elastic-carousel";
     @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 </style>
 
+// Carousel breakpoints
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
@@ -68,77 +69,54 @@ const InstaWrapper = styled.div`
     padding: 0 10%;   
     margin: 0;    
     /* margin: 0 5%;     */
-    margin-bottom:100px;
-
-    /* @media (max-width: 1599px) {
-        padding: 0 25%;
-    }
-    @media (max-width: 1400px) {
-        padding: 0 22%;
-    }
-    @media (max-width: 1199px) {
-        padding: 0 20%;
-    }
-    @media (max-width: 1100px) {
-        padding: 0 17%;
-    }
-    @media (max-width: 1000px) {
-        padding: 0 14%;
-    }
-    @media (max-width: 900px) {
-        padding: 0 10%;
-    }
-    @media (max-width: 800px) {
-        padding: 0 5%;
-    }
-    @media (max-width: 720px) {
-        padding: 0 10%;
-        justify-content: center;
-    } */
+    margin-bottom:100px; 
     
-`
-
-const InstaImgLinks1 = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
+    @media (max-width: 500px) {
+        padding: 0 5%;      
+    } 
 `
 
 // const InstaImgLinks1 = styled.div`
-//     display:flex;
-//     flex-wrap:wrap;    
-//     justify-content: space-between;
-//     margin: 0;    
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     height: 100vh;
 //     width: 100%;
-//     overflow: hidden;
-
-// @media (max-width:650px) {
-//     overflow-x:scroll;
-//     display:flex;
-//     flex-direction:row;
-//     flex-wrap:nowrap;
-//     scroll-snap-type:x mandatory;
-// }
-
-//     img {
-//         width:300px;
-//         height:380px;
-//         margin:10px;
-//         border-radius:3px;
-        
-//     }
-
-//     img:hover{
-//         z-index:1;
-//         transform:scale(1.02);
-//         transition-duration: .2s;
-//         box-shadow:0 10px 60px rgba(25,25,26,.2);
-//         cursor: pointer;
-        
-//     }
 // `
+
+const InstaImgLinks1 = styled.div`
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-between;
+    margin: 0;    
+    width: 100%;
+    overflow: hidden;
+
+/* @media (max-width:650px) {
+    overflow-x:scroll;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    scroll-snap-type:x mandatory;
+}
+
+    img {
+        width:300px;
+        height:380px;
+        margin:10px;
+        border-radius:3px;
+        
+    }
+
+    img:hover{
+        z-index:1;
+        transform:scale(1.02);
+        transition-duration: .2s;
+        box-shadow:0 10px 60px rgba(25,25,26,.2);
+        cursor: pointer;
+        
+    } */
+`
 
 const ImgWrapper = styled.div `
     margin: 50px 10px;
@@ -146,17 +124,6 @@ const ImgWrapper = styled.div `
     height:380px;
     display: inline-block;
     overflow: hidden;
-
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250px;
-    width: 100%;
-    background-color: #683bb7;
-    color: #fff;
-    margin: 15px;
-    font-size: 4em; */
-
 
     img {
         display: block;        
@@ -172,6 +139,15 @@ const ImgWrapper = styled.div `
         transform-origin: 50% 50%;
         }
         
+    }
+
+    @media (max-width: 712px) {
+        width: 70%;   
+        height: 450px;   
+    }
+    @media (max-width: 560px) {
+        width: 90%;   
+        height: 400px;   
     }
 
     /* @media (max-width:650px) {
@@ -217,7 +193,7 @@ const InstaContact = styled.div `
     flex-direction:column;
     justify-content:left;
     text-align:left;
-    margin-left: 10px;
+    margin-left: 10px;    
 
     h4 {
         font-weight:400;
