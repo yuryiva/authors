@@ -39,7 +39,7 @@ const GetInTouchForm = () => {
     setTopicChosen("");
   };
   return (
-    <SendMessageForm>
+    <SendMessageWrapper>
       {sentMessage ? (
         <div>
           {sentMessage === "SENT" && (
@@ -53,17 +53,18 @@ const GetInTouchForm = () => {
           </button>
         </div>
       ) : (
+        <FormWrapper>
         <form onSubmit={handleSubmit}>
           <h2>Get In Touch</h2>
-          <div>
+          <NameSection>
             <label htmlFor="name">Full name </label>
             <input type="text" id="name" required />
-          </div>
-          <div>
+          </NameSection>
+          <Email>
             <label htmlFor="email">Email </label>
             <input type="email" id="email" required />
-          </div>
-          <div>
+          </Email>
+          <Topic>
             <label htmlFor="topic">Topic </label>
             <select onChange={handleTopicChoice} required>
               <option></option>
@@ -73,16 +74,17 @@ const GetInTouchForm = () => {
                 </option>
               ))}
             </select>
-          </div>
+          </Topic>
 
-          <div>
+          <Message>
             <label htmlFor="message">Your Message </label>
             <textarea id="message" required />
-          </div>
+          </Message>
           <button type="submit">{status}</button>
         </form>
+        </FormWrapper>
       )}
-    </SendMessageForm>
+    </SendMessageWrapper>
   );
 };
 
@@ -93,16 +95,76 @@ export default GetInTouchForm;
 // background-color: yellow;
 // text-align: center;
 // `
-const SendMessageForm = styled.div`
-  width: 50%;
-  height: 30%;
+const SendMessageWrapper = styled.div`
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: lightblue;
+  align-items:center;
+  justify-content:center;
+  background-color:lightgray;
 
-  border: 2px solid black;
 `;
+
+const FormWrapper = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+text-align:right;
+align-items:center;
+width:60%;
+border-radius:10px;
+background-color:white;
+
+button {
+  width:30%;
+  background-color:white;
+  border:1px solid black;
+  border-radius:5px;
+  margin:10px ;
+}
+
+`
+
+const NameSection = styled.div`
+ input {
+   width:300px;
+   border:0;
+   margin:15px ;
+   border-bottom:1px solid black;
+ }
+`
+
+const Email = styled.div`
+input {
+   width:300px;
+   border:0;
+   margin:15px;
+   border-bottom:1px solid black;
+ }
+`
+
+const Topic = styled.div`
+select {
+   width:300px;
+   border:0;
+   margin:15px ;
+   border-bottom:1px solid black;
+
+ }
+`
+
+const Message = styled.div`
+
+textarea{
+  width:300px;
+  height:100px;
+  margin:0 15px ;
+ 
+}
+
+`
 
 // const SendMessageButton = styled.button`
 // font-size: ${({ Initial }) => Initial ? '50px': '20px'}
