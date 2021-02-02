@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Carousel from "react-elastic-carousel";
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 </style>
+
+const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 }
+];
 
 const Instagram = () => {
     return (
@@ -19,21 +27,23 @@ const Instagram = () => {
             </InstaText>
 
             <InstaImgLinks1>
-                <ImgWrapper>
-                    <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                </ImgWrapper>
-                <ImgWrapper>
-                    <img src='https://images.unsplash.com/photo-1610948237307-bbebf8da8a8d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                </ImgWrapper>
-                <ImgWrapper>
-                    <img src='https://images.unsplash.com/photo-1610935591850-9a3bf14810c0?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                </ImgWrapper>
-                {/* <ImgWrapper1>
-                    <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                </ImgWrapper1> */}
-                <ImgWrapper>
-                    <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                </ImgWrapper>
+                <Carousel breakPoints={breakPoints}>
+                    <ImgWrapper>
+                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    </ImgWrapper>
+                    <ImgWrapper>
+                        <img src='https://images.unsplash.com/photo-1610948237307-bbebf8da8a8d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    </ImgWrapper>
+                    <ImgWrapper>
+                        <img src='https://images.unsplash.com/photo-1610935591850-9a3bf14810c0?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    </ImgWrapper>
+                    {/* <ImgWrapper1>
+                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    </ImgWrapper1> */}
+                    <ImgWrapper>
+                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                    </ImgWrapper>
+                </Carousel>
             </InstaImgLinks1>
                     {/* <InstaImgLinks2>
                     <img src='https://images.unsplash.com/photo-1610869504857-e425fc2093ab?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1NHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
@@ -60,7 +70,7 @@ const InstaWrapper = styled.div`
     /* margin: 0 5%;     */
     margin-bottom:100px;
 
-    @media (max-width: 1599px) {
+    /* @media (max-width: 1599px) {
         padding: 0 25%;
     }
     @media (max-width: 1400px) {
@@ -84,46 +94,51 @@ const InstaWrapper = styled.div`
     @media (max-width: 720px) {
         padding: 0 10%;
         justify-content: center;
-    }
+    } */
     
 `
 
 const InstaImgLinks1 = styled.div`
-    display:flex;
-    flex-wrap:wrap;
-    /* flex-direction:row; */
-    /* justify-content:center; */
-    justify-content: space-between;
-    margin: 0;
-    /* width:auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100%;
-    overflow: hidden;
-
-/* @media (max-width:650px) {
-    overflow-x:scroll;
-    display:flex;
-    flex-direction:row;
-    flex-wrap:nowrap;
-    scroll-snap-type:x mandatory;
-} */
-
-    /* img {
-        width:300px;
-        height:380px;
-        margin:10px;
-        border-radius:3px;
-        
-    } */
-
-    /* img:hover{
-        z-index:1;
-        transform:scale(1.02);
-        transition-duration: .2s;
-        box-shadow:0 10px 60px rgba(25,25,26,.2);
-        cursor: pointer;
-        
-    } */
 `
+
+// const InstaImgLinks1 = styled.div`
+//     display:flex;
+//     flex-wrap:wrap;    
+//     justify-content: space-between;
+//     margin: 0;    
+//     width: 100%;
+//     overflow: hidden;
+
+// @media (max-width:650px) {
+//     overflow-x:scroll;
+//     display:flex;
+//     flex-direction:row;
+//     flex-wrap:nowrap;
+//     scroll-snap-type:x mandatory;
+// }
+
+//     img {
+//         width:300px;
+//         height:380px;
+//         margin:10px;
+//         border-radius:3px;
+        
+//     }
+
+//     img:hover{
+//         z-index:1;
+//         transform:scale(1.02);
+//         transition-duration: .2s;
+//         box-shadow:0 10px 60px rgba(25,25,26,.2);
+//         cursor: pointer;
+        
+//     }
+// `
 
 const ImgWrapper = styled.div `
     margin: 50px 10px;
@@ -132,11 +147,20 @@ const ImgWrapper = styled.div `
     display: inline-block;
     overflow: hidden;
 
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    background-color: #683bb7;
+    color: #fff;
+    margin: 15px;
+    font-size: 4em; */
+
 
     img {
         display: block;        
-        width: 100%;
-        /* height:300px;   */
+        width: 100%;        
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;    

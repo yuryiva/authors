@@ -12,3 +12,17 @@
     font-family: 'Space Mono', monospace;    
 }
 
+/* .rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 0px violet;
+} */
+
+
+/* Carousel buttons removed due to styling */
+.gpkfGM {
+    display: none;
+}
+.pXHlW, 
+.pXHlW:disabled {
+    display: none;
+}
