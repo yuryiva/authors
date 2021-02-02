@@ -97,7 +97,8 @@ const TellYourStoryForm = () => {
           </button>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <FormWrapper onSubmit={handleSubmit}>
+        <TextWrapper>
           <h2>Tell Your Story</h2>
           <p>
             It is a long established fact that a reader will be distracted by
@@ -106,19 +107,21 @@ const TellYourStoryForm = () => {
             distribution of letters, as opposed to using 'Content here, content
             here'.
           </p>
-          <div>
+          </TextWrapper>
+          <NameWrapper>
             <label htmlFor="name">Full name </label>
             <input type="text" id="name" required />
-          </div>
-          <div>
+          </NameWrapper>
+          <EmailWrapper>
             <label htmlFor="email">Email </label>
             <input type="email" id="email" required />
-          </div>
-          <div>
+          </EmailWrapper>
+          <TopicWrapper>
             <label htmlFor="topic">Topic </label>
             <input type="text" id="topic" required />
-          </div>
+          </TopicWrapper>
           <div>
+          <FileWrapper>
             <label>Add File </label>
             <input
               type="file"
@@ -126,23 +129,25 @@ const TellYourStoryForm = () => {
               // multiple- for multiple files upload
               onChange={onChangeHandler}
             />
-
+            </FileWrapper>
             <ProgressBar>
               {stateOfLoading > 0 && Math.round(stateOfLoading, 2) + "%"}
             </ProgressBar>
-
+            <Button>
             <button type="button" onClick={onClickHandler}>
               {uploadButton}
             </button>
+            </Button>
           </div>
 
-          <div>
+          <Story>
             <label htmlFor="message">Your Story: </label>
             <textarea id="message" required />
-          </div>
+          </Story>
           <button type="submit">{status}</button>
-        </form>
+        </FormWrapper>
       )}
+      
     </SendMessageForm>
   );
 };
@@ -150,15 +155,90 @@ const TellYourStoryForm = () => {
 export default TellYourStoryForm;
 
 const SendMessageForm = styled.div`
-  width: 50%;
-  height: 30%;
+  width: 100%;
+  height:auto;
   display: flex;
   flex-direction: column;
-  text-align: center;
   background: lightblue;
   border: 2px solid black;
   margin-top: 150px;
-`;
+  background-color:white;
+  border:0;
+
+`
+const FormWrapper = styled.div`
+width:50%;
+height:600px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:right;
+background-color:lightgray;
+
+height:70vh;`
+
+const TextWrapper = styled.div`
+display:flex;
+flex-direction:column;
+text-align:left; 
+margin:10px;
+
+h2{
+  margin-bottom:20px;
+}
+
+p {
+  margin-bottom:20px;
+}
+`
+
+const NameWrapper = styled.div`
+width:60%;
+
+input {
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  width:100%;
+}`
+
+const EmailWrapper = styled.div`
+input {
+  width:100%;
+}
+`
+
+const TopicWrapper = styled.div`
+input {
+  width:60%;
+}
+`
+
+const FileWrapper = styled.div`
+input {
+  width:60%;
+
+}
+`
+
+const Story = styled.div`
+textarea {
+  width:60%;
+  height:150px;
+}
+`
+
+const Button = styled.div `
+button {
+  width:150px;
+  height:30px;
+  background-color:white;
+  border:1px solid black;
+  border-radius:10px;
+}
+`
+;
 
 // const SendMessageButton = styled.button`
 // font-size: ${({ Initial }) => Initial ? '50px': '20px'}

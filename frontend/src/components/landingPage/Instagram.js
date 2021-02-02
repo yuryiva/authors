@@ -31,7 +31,7 @@ const Instagram = () => {
 }
 
 const InstaWrapper = styled.div`
-display:flex;
+display:block;
 flex-direction:column;
 flex-wrap:wrap;
 text-align:center;
@@ -60,8 +60,9 @@ width:100%;
 } */
 
 img {
-    width:300px;
-    height:380px;
+    display:block;
+    width:330px;
+    height:400px;
     margin:10px;
     border-radius:3px;
     
@@ -78,7 +79,7 @@ img:hover{
 `
 
 const ImgWrapper= styled.div `
-@media (max-width:650px) {
+@media (max-width:700px) {
 display:none;
 width:100%;
 }
@@ -88,7 +89,7 @@ const ImgWrapper1 = styled.div `
     @media (min-width:960px) AND (max-width:1300px){
         display:none;
     }
-    @media (max-width:650px) {
+    @media (max-width:700px) {
     display:none;
     }
 `
