@@ -23,6 +23,14 @@ app.use("/", [
   subscribeRouter,
 ]);
 
+app.get('/hello', (req,res)=>{
+  res.send('HELLO FROM THE AUTHORS-SERVER')
+})
+app.get('/test', (req,res)=>{
+  res.send('TEST TEST TEST FROM THE AUTHORS-SERVER')
+})
+
+
 ////////////////// UPLOAD FILES
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
