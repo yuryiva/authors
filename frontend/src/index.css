@@ -14,14 +14,12 @@
 
 
 /* Carousel arrow buttons removed due to styling */
-.gpkfGM, 
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.eDhGWk > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-right,
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.eDhGWk > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-right {
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-left {
     display: none;
 }
-.pXHlW, 
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.eDhGWk > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-left,
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.eDhGWk > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-left {
+
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-right, 
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-right {
     display: none;
 }
 
@@ -33,8 +31,8 @@
 }
 
 /* This disables the dot button on the carousel for large screens */
-@media (min-width: 1525px) {
-    #root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.eDhGWk > div > div.sc-hHftDr.ioRyKi.rec.rec-pagination {
+@media (min-width: 1525px) {     
+    #root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-hHftDr.ioRyKi.rec.rec-pagination {
         display: none;
     }
 } 

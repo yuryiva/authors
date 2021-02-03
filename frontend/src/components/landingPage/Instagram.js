@@ -89,7 +89,8 @@ const InstaImgLinks1 = styled.div`
     display: flex;
     flex-wrap: wrap;    
     justify-content: space-between;
-    margin: 0;    
+    margin: 0; 
+    padding: 0;   
     width: 100%;
     overflow: hidden;
 
@@ -127,9 +128,19 @@ const ImgWrapper = styled.div `
     display: inline-block;
     overflow: hidden;
 
+    position: relative;
+
     img {
         display: block;        
-        width: 100%;        
+        width: 100%;  
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;    
