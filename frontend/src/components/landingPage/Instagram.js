@@ -122,28 +122,30 @@ const InstaImgLinks1 = styled.div`
 `
 
 const ImgWrapper = styled.div `
-    margin: 50px 10px;
-    width:300px;
-    height:380px;
+    /* margin: 50px 10px; */
+    margin: 35px;
+    width: 300px;    
+    height: 380px;
     display: inline-block;
     overflow: hidden;
-
     position: relative;
 
     img {
         display: block;        
         width: 100%;  
-        
+
+        /* Midnight cosmetics styling */
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
         object-fit: cover;
         object-position: center;
+       /* Midnight cosmetics styling ends here */
 
-        background-repeat: no-repeat;
+        /* background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;    
+        background-size: cover;     */
         transition: transform 0.8s;
 
         &:hover {
@@ -153,14 +155,14 @@ const ImgWrapper = styled.div `
         }        
     }
 
-    @media (max-width: 712px) {
+    /* @media (max-width: 712px) {
         width: 70%;   
         height: 450px;   
     }
     @media (max-width: 560px) {
         width: 90%;   
         height: 400px;  
-    } 
+    }  */
 `
     
 
@@ -201,7 +203,7 @@ const InstaContact = styled.div `
     flex-direction:column;
     justify-content:left;
     text-align:left;
-    margin-left: 10px;    
+    margin-left: 40px;    
 
     h4 {
         font-weight:400;
@@ -221,7 +223,7 @@ button {
     height:40px;
     border-radius:2px;
     /* margin-left:50px; */
-    margin-right: 10px;
+    margin-right: 40px;    
     border:1px solid black;
     background-color:white;
     cursor: pointer;

@@ -38,6 +38,17 @@
     }
 } 
 
+/* Removing the margin from the carousel wrapper */
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > div {
+    margin: 0;    
+}
+
+
+/* Changing the style of the carousel item wrappers */
+/* .sc-hBEYos.ioGps.rec.rec-item-wrapper {
+    min-width: 300px;
+} */
+
 
 /* .rec-carousel-item:focus {
     outline: none;
