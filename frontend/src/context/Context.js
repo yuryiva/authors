@@ -16,6 +16,7 @@ class Provider extends Component {
     postcode: "",
     message: "",
     totalOrder: 0,
+    bookPrice: 25.75,
   };
 
   //   Component did mount section
@@ -43,12 +44,21 @@ class Provider extends Component {
     });
   };
 
+  //   //get book price from books.js and pass it to pre-order form.
+  // getBookPrice = (data) => {
+  //   // console.log("Hello from CONTEXT");
+  //   this.setState({
+  //     bookPrice: data.bookPrice,
+  //   });
+  // };
+
   render() {
     return (
       <Context.Provider
         value={{
           //same function as above getDataFromForm : this.getDataFromForm
           getDataFromForm: this.getDataFromForm,
+          // getBookPrice: this.getBookPrice,
           state: this.state,
         }}
       >

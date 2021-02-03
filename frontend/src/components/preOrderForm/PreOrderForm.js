@@ -21,9 +21,10 @@ const PreOrderForm = () => {
   //storing context in variable that I named context, to have access to everyhing
   const context = useContext(Context);
   console.log(context);
-  const bookPrice = 15.99;
 
-  const totalOrder = bookPrice * amount;
+  const bookPrice = context.state.bookPrice;
+
+  const totalOrder = context.state.bookPrice * amount;
 
   const handleAnotherOrder = () => {
     setSentMessage(false);
@@ -92,10 +93,10 @@ const PreOrderForm = () => {
         <SentMessageForm onChange={handleChange}>
           <h5>PRICE PER BOOK: {bookPrice} EUR</h5>
           <div>
-            <label htmlFor="amount">Amount of books</label>
+            <label htmlFor="amount">Amount of books: </label>
             {/* need to fix burgermenu component */}
             <input
-              style={{ zIndex: 999 }}
+              // style={{ zIndex: 999 }}
               type="number"
               id="amount"
               min="0"
@@ -203,6 +204,7 @@ const SentMessageForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 60%;
+  margin-top: 100px;
   label {
     width: 40%; m,
     margin-right: 30px;
