@@ -58,6 +58,7 @@ const Instagram = () => {
 }
 
 const InstaWrapper = styled.div`
+
     display:flex;
     flex-direction:column;
     flex-wrap:wrap;
@@ -98,24 +99,25 @@ const InstaImgLinks1 = styled.div`
     flex-direction:row;
     flex-wrap:nowrap;
     scroll-snap-type:x mandatory;
-}
+} */
 
-    img {
-        width:300px;
-        height:380px;
-        margin:10px;
-        border-radius:3px;
+//     img {
+//         width:300px;
+//         height:380px;
+//         margin:10px;
+//         border-radius:3px;
         
-    }
+//     }
 
-    img:hover{
-        z-index:1;
-        transform:scale(1.02);
-        transition-duration: .2s;
-        box-shadow:0 10px 60px rgba(25,25,26,.2);
-        cursor: pointer;
+
+//     img:hover{
+//         z-index:1;
+//         transform:scale(1.02);
+//         transition-duration: .2s;
+//         box-shadow:0 10px 60px rgba(25,25,26,.2);
+//         cursor: pointer;
         
-    } */
+//     } */
 `
 
 const ImgWrapper = styled.div `
@@ -141,6 +143,7 @@ const ImgWrapper = styled.div `
         
     }
 
+
     @media (max-width: 712px) {
         width: 70%;   
         height: 450px;   
@@ -148,7 +151,11 @@ const ImgWrapper = styled.div `
     @media (max-width: 560px) {
         width: 90%;   
         height: 400px;   
-    }
+
+//     @media (max-width:700px) {
+//     display:none;
+
+//     }
 
     /* @media (max-width:650px) {
         display:none;

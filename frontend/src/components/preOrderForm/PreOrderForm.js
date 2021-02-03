@@ -204,7 +204,7 @@ const SentMessageForm = styled.form`
   flex-direction: column;
   width: 60%;
   label {
-    width: 40%; m,
+    width: 40%;
     margin-right: 30px;
     text-align: right;
     align-items: bottom;
