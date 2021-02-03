@@ -179,6 +179,7 @@ const TellStoryForm = () => {
 
 export default TellStoryForm;
 const DivWrapper = styled.div`
+  margin-top: 100px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -332,7 +333,7 @@ const BoxButton = styled.div`
   }
 
   button {
-    width: 30%;
+    width: 75%;
     height: 35px;
     border-radius: 5px;
     background-color: white;
