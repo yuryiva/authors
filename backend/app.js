@@ -1,5 +1,6 @@
 /// THIS FILE CONTAINS MIDDLEWARES
-const tellYourStoryRouter = require("./tellYourStoryForm/tellYourStoryForm");
+// const tellYourStoryRouter = require("./tellYourStoryForm/tellYourStoryForm");
+const tellStoryRouter = require("./tellStoryForm/tellStoryForm");
 const getInTouchRouter = require("./getInTouchForm/getInTouchForm");
 const preOrderRouter = require("./preOrder/preOrder");
 const subscribeRouter = require("./subscribe/subscribe");
@@ -14,7 +15,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/", [
-  tellYourStoryRouter,
+  // tellYourStoryRouter,/////////////////
+  tellStoryRouter,
   getInTouchRouter,
   preOrderRouter,
   testRouter,
@@ -24,7 +26,7 @@ app.use("/", [
 ////////////////// UPLOAD FILES
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "tellYourStoryForm/uploads"); //////////////////where is it better to save files for uploading?
+    cb(null, "tellStoryForm/uploads"); //////////////////where is it better to save files for uploading?
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname);
