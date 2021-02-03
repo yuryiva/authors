@@ -9,6 +9,20 @@
     padding: 0;
     box-sizing: border-box;
     /* font-family: 'Roboto Mono', monospace; */
-    font-family: 'Space Mono', monospace;
+    font-family: 'Space Mono', monospace;    
 }
 
+
+/* Carousel buttons removed due to styling */
+.gpkfGM {
+    display: none;
+}
+.pXHlW, 
+.pXHlW:disabled {
+    display: none;
+}
+
+/* .rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 0px violet;
+} */

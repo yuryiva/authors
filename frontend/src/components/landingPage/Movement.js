@@ -13,13 +13,13 @@ const JoinTheMovement = () => {
 }
 
 const MovementWrapper = styled.div`
-background-color:lightgray;
-display:flex;
-text-align:center;
-justify-content:center;
-height:400px;
-margin: 100px 0;
-font-family: 'Space Mono', monospace;
+      background-color:lightgray;
+      display:flex;
+      text-align:center;
+      justify-content:center;
+      height:400px;
+      margin: 100px 0;
+      font-family: 'Space Mono', monospace;
 
 h1 {
       font-size:40px;

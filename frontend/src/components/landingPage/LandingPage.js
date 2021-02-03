@@ -9,13 +9,18 @@ import Banner from "../banner/Banner";
 
 export default function LandingPage() {
   return (
-    <div>
+    <MainWrapper>
       <Banner />
       <OurImpact />
       {/* <Journey /> */}
       <StoriesShortcut/>
       <JoinTheMovement/>
       <Instagram/>
-    </div>
+    </MainWrapper>
   );
 }
+
+const MainWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`
