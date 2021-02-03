@@ -14,7 +14,8 @@
 
 
 /* Carousel arrow buttons removed due to styling */
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-left {
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-left, 
+#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-left {
     display: none;
 }
 
