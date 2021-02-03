@@ -139,10 +139,8 @@ const ImgWrapper = styled.div `
         cursor: pointer;
         transform: scale(1.1);
         transform-origin: 50% 50%;
-        }
-        
+        }        
     }
-
 
     @media (max-width: 712px) {
         width: 70%;   
@@ -150,18 +148,10 @@ const ImgWrapper = styled.div `
     }
     @media (max-width: 560px) {
         width: 90%;   
-        height: 400px;   
-
-//     @media (max-width:700px) {
-//     display:none;
-
-//     }
-
-    /* @media (max-width:650px) {
-        display:none;
-        width:100%;
-    } */
+        height: 400px;  
+    } 
 `
+    
 
 // const ImgWrapper1 = styled.div`
 //     @media (min-width:960px) AND (max-width:1300px){
