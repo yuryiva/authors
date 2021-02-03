@@ -28,7 +28,8 @@ const TellStoryForm = () => {
         console.log(data);
       }
       axios
-        .post("http://localhost:8080/upload", data, {
+        // .post("http://localhost:8080/upload", data, {
+        .post("https://the-authors.herokuapp.com/upload", data, {
           ///////////////////////
           onUploadProgress: (ProgressEvent) => {
             setStateOfLoading(
