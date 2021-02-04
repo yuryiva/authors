@@ -12,45 +12,11 @@
     font-family: 'Space Mono', monospace;    
 }
 
-
-/* Carousel arrow buttons removed due to styling */
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-left, 
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-left {
+/* Carousel arrows in the Instagram section */
+.rec.rec-arrow,
+.rec.rec-arrow:disabled {
+    /* visibility: hidden; */
     display: none;
 }
 
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.jlglry.rec.rec-arrow.rec.rec-arrow-right, 
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > button.sc-kstrdz.dUXans.rec.rec-arrow.rec.rec-arrow-right {
-    display: none;
-}
-
-/* These are the styles for the dot buttons in the carousel section  */
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-hHftDr.ioRyKi.rec.rec-pagination > button.sc-dIUggk.RlEAI.rec.rec-dot.rec.rec-dot_active {
-    background-color: lightgray;
-    /* box-shadow: 0 0 1px 3px rgb(103 58 183); */
-    box-shadow: 0 0 1px 3px rgb(136, 135, 135);   
-}
-
-/* This disables the dot button on the carousel for large screens */
-@media (min-width: 1525px) {     
-    #root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-hHftDr.ioRyKi.rec.rec-pagination {
-        display: none;
-    }
-} 
-
-/* Removing the margin from the carousel wrapper */
-#root > div > div.sc-cBNfnY.gTigKJ > div.sc-dmlrTW.kCFUra > div.sc-kfzAmx.fTxTma > div > div.sc-bkzZxe.cPzzNL.rec.rec-carousel > div {
-    margin: 0;    
-}
-
-
-/* Changing the style of the carousel item wrappers */
-/* .sc-hBEYos.ioGps.rec.rec-item-wrapper {
-    min-width: 300px;
-} */
-
-
-/* .rec-carousel-item:focus {
-    outline: none;
-    box-shadow: inset 0 0 1px 0px violet;
-} */
+/* 1462px */
