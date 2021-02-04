@@ -32,7 +32,7 @@ const Instagram = () => {
             <InstaImgLinks1>
                 <Carousel 
                     breakPoints={breakPoints}
-                    itemPadding={[10, 10]}
+                    itemPadding={[10, 10]}                    
                 >
                     <ImgWrapper>
                         <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
@@ -146,7 +146,7 @@ const InstaContact = styled.div `
     flex-direction:column;
     justify-content:left;
     text-align:left;
-    margin-left: 30px;    
+    margin-left: 40px;    
 
     h4 {
         font-weight:400;
@@ -165,7 +165,7 @@ button {
     width:130px;
     height:40px;
     border-radius:2px;    
-    margin-right: 30px;    
+    margin-right: 40px;    
     border:1px solid black;
     background-color:white;
     cursor: pointer;
