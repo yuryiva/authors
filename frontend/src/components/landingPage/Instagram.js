@@ -68,7 +68,6 @@ const InstaWrapper = styled.div`
     } 
 `
 
-
 // const InstaImgLinks1 = styled.div`
 //     display: flex;
 //     flex-wrap: wrap;    
