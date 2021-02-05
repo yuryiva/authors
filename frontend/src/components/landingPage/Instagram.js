@@ -18,7 +18,6 @@ const breakPoints = [
 const Instagram = () => {
     return (
         <InstaWrapper>
-
             <InstaText>
                 <InstaContact>
                     <h4>#AuthorsWeekly</h4>
@@ -29,41 +28,30 @@ const Instagram = () => {
                 </Follow>
             </InstaText>
 
-            <InstaImgLinks1>
-                <Carousel 
-                    breakPoints={breakPoints}
-                    itemPadding={[10, 10]}                    
-                >
-                    <ImgWrapper>
-                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                    </ImgWrapper>
-                    <ImgWrapper>
-                        <img src='https://images.unsplash.com/photo-1610948237307-bbebf8da8a8d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                    </ImgWrapper>
-                    <ImgWrapper>
-                        <img src='https://images.unsplash.com/photo-1610935591850-9a3bf14810c0?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                    </ImgWrapper>
-                    {/* <ImgWrapper1>
-                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                    </ImgWrapper1> */}
-                    <ImgWrapper>
-                        <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
-                    </ImgWrapper>
-                </Carousel>
-            </InstaImgLinks1>
-                    {/* <InstaImgLinks2>
-                    <img src='https://images.unsplash.com/photo-1610869504857-e425fc2093ab?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1NHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
-                    <img src='https://images.unsplash.com/photo-1610916975200-6d28742d4dd6?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3M3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
-                    <img src='https://images.unsplash.com/photo-1610831655344-d2ab131b614f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5Nnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
-                    <img src='https://images.unsplash.com/photo-1610801264293-588a3b6c3446?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMjV8fHxlbnwwfHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' atl='portrait' />
-                
-                </InstaImgLinks2> */}
-        </InstaWrapper>
+            <Carousel 
+                breakPoints={breakPoints}
+                // itemPadding={[10, 10]}                    
+            >
+                <ImgWrapper>
+                    <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                </ImgWrapper>
+                <ImgWrapper>
+                    <img src='https://images.unsplash.com/photo-1610948237307-bbebf8da8a8d?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                </ImgWrapper>
+                <ImgWrapper>
+                    <img src='https://images.unsplash.com/photo-1610935591850-9a3bf14810c0?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                </ImgWrapper>
+                    
+                <ImgWrapper>
+                    <img src='https://images.unsplash.com/photo-1610824771380-390c72f79f11?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNXx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' alt='portrait' />
+                </ImgWrapper>
+            </Carousel>
+        </InstaWrapper>                 
+        
     )
 }
 
 const InstaWrapper = styled.div`
-
     display:flex;
     flex-direction:column;
     flex-wrap:wrap;
@@ -71,35 +59,30 @@ const InstaWrapper = styled.div`
     align-items:center;    
     font-family: 'Space Mono', monospace;
     width:100%;    
-    /* width:100vw;  */
-    padding: 0 10%;   
-    margin: 0;    
-    /* margin: 0 5%;     */
+    padding: 0 5%;   
+    margin: 0;     
     margin-bottom:100px; 
     
     @media (max-width: 500px) {
-        padding: 0 5%;      
+        padding: 0 2%;      
     } 
 `
 
 
-const InstaImgLinks1 = styled.div`
-    display: flex;
-    flex-wrap: wrap;    
-    justify-content: space-between;
-    margin: 0; 
-    padding: 0;   
-    width: 100%;
-    overflow: hidden;
+// const InstaImgLinks1 = styled.div`
+//     display: flex;
+//     flex-wrap: wrap;    
+//     justify-content: space-between;
+//     margin: 0; 
+//     padding: 0;   
+//     width: 100%;
+//     overflow: hidden;
+// `
 
-
-`
-
-const ImgWrapper = styled.div `
-    /* margin: 50px 10px; */
-    /* margin: 35px; */
-    width: 300px;    
-    height: 380px;
+const ImgWrapper = styled.div `   
+    margin: 0 20px;    
+    width: 500px;    
+    /* height: 500px; */
     display: inline-block;
     overflow: hidden;
     position: relative;
@@ -107,19 +90,9 @@ const ImgWrapper = styled.div `
     img {
         display: block;        
         width: 100%;  
-
-        /* Midnight cosmetics styling */
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-       /* Midnight cosmetics styling ends here */
-
-        /* background-repeat: no-repeat;
+        background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;     */
+        background-size: cover;    
         transition: transform 0.8s;
 
         &:hover {
@@ -132,11 +105,8 @@ const ImgWrapper = styled.div `
     
 
 const InstaText = styled.div `
-    display:flex;
-    /* flex-direction:row; */
-    /* justify-content:center; */
-    justify-content: space-between;
-    /* margin: 0 10px; */
+    display:flex;    
+    justify-content: space-between;    
     margin-bottom:30px;    
     width:100%;
 `
@@ -146,7 +116,7 @@ const InstaContact = styled.div `
     flex-direction:column;
     justify-content:left;
     text-align:left;
-    margin-left: 40px;    
+    margin-left: 20px;    
 
     h4 {
         font-weight:400;
@@ -165,7 +135,7 @@ button {
     width:130px;
     height:40px;
     border-radius:2px;    
-    margin-right: 40px;    
+    margin-right: 20px;    
     border:1px solid black;
     background-color:white;
     cursor: pointer;
@@ -176,18 +146,16 @@ button {
     } */
 }
 
-button:hover {
-    background-color:lightgray;
-    border:0;
-    cursor: pointer;
-}
+    button:hover {
+        background-color:lightgray;
+        border:0;
+        cursor: pointer;
+    }
 
-button:active {
-    background-color:black;
-    color:white;
-}
-
-
+    button:active {
+        background-color:black;
+        color:white;
+    }
 `
 
 export default Instagram;
